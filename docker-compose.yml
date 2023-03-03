@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:1.13
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./static:/static
+    depends_on:
+      - django
+
+  mysql:
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./mysql/.env
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+
+  django:
+    build: ./django
+    command: uwsgi --socket :8001 --module app.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+    volumes:
+      - ./src:/code
+      - ./static:/static
+    expose:
+      - "8001"
+    env_file:
+      - ./django/.env
+    depends_on:
+      - mysql

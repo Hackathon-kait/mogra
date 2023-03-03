@@ -1,0 +1,4 @@
+django/.env
+mysql/*
+src/app/__pycache__/*
+static/*
