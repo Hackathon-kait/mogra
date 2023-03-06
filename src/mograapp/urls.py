@@ -13,5 +13,6 @@ urlpatterns = [
     path('create/',views.MyEventCreateView.as_view(),name='create'),
     path('delete/<uuid:pk>',views.DetailDeleteView.as_view(),name='delete'),
     path('update/<uuid:pk>/',views.DetailUpdateView.as_view(), name='update'),
+    path('graph/', views.MyLoginView.as_view(), name='graph'),
 ]
 
