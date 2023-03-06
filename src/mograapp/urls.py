@@ -9,3 +9,4 @@ urlpatterns = [
     path('logout/', views.MyLogoutView.as_view(), name='logout'),
     path('home/', views.MyUserView.as_view(), name='home'),
 ]
+

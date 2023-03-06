@@ -1,0 +1,88 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+</head>
+<body>
+<!-- グラフ描画エリア -->
+<div style="width:100%">
+  <canvas id="canvas"></canvas>
+</div>
+
+<!-- グラフ更新ボタン -->
+<button type="button" id="btn">グラフを更新</button>
+
+<script>
+var chartVal = []; // グラフデータ（描画するデータ）
+
+// ページ読み込み時にグラフを描画
+getRandom(); // グラフデータにランダムな値を格納
+drawChart(); // グラフ描画処理を呼び出す
+
+
+// ボタンをクリックしたら、グラフを再描画
+document.getElementById('btn').onclick = function() {
+  // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
+  if (myChart) {
+    myChart.destroy();
+  }
+
+  getRandom(); // グラフデータにランダムな値を格納
+  drawChart(); // グラフを再描画
+}
+
+
+// グラフデータをランダムに生成
+function getRandom() {
+  chartVal = []; // 配列を初期化
+  var length = 12;
+  for (i = 0; i < length; i++) {
+    chartVal.push(Math.floor(Math.random() * 20));
+  }
+}
+
+
+// グラフ描画処理
+function drawChart(){
+  let lineCtx = document.getElementById("canvas");
+  Chart.defaults.global.elements.point = {
+    radius: 5,
+    pointStyle: 'circle',
+    hitRadius: 20,
+    hoverRadius: 20,
+  };
+  Chart.defaults.global.elements.line = {
+    tension: 0,
+    borderDash: [],
+  };
+        // 線グラフの設定
+        let lineConfig = {
+          type: 'line',
+          data: {
+            // ※labelとデータの関係は得にありません
+            labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [{
+              label: 'モチベーションマップ',
+              data: chartVal,
+              borderColor: '#f88',
+            }]
+          },
+          options: {
+            scales: {
+              // Y軸の最大値・最小値、目盛りの範囲などを設定する
+              y: {
+                suggestedMin: 0,
+                suggestedMax: 60,
+                ticks: {
+                  stepSize: 20,
+                }
+              }
+            },
+          },
+        };
+        let lineChart = new Chart(lineCtx, lineConfig);
+}
+</script>
+</body>
+</html>
