@@ -13,3 +13,4 @@ urlpatterns = [
     path('create/',views.MyEventCreateView.as_view(),name='create'),
     path('delete/<uuid:pk>',views.DetailDeleteView.as_view(),name='delete'),
 ]
+
