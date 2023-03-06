@@ -2,3 +2,4 @@ django/.env
 mysql/*
 src/app/__pycache__/*
 static/*
+src/mograapp/__pycache__/*
