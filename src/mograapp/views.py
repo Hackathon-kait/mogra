@@ -36,3 +36,6 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
+
+class MyGraphView(TemplateView):
+    template_name = 'graph.html'
