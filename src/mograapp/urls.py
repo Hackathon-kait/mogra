@@ -14,3 +14,4 @@ urlpatterns = [
     path('delete/<uuid:pk>',views.DetailDeleteView.as_view(),name='delete'),
     path('update/<uuid:pk>/',views.DetailUpdateView.as_view(), name='update'),
 ]
+
