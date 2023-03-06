@@ -30,6 +30,8 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
+class GraphView():
+   template_name = 'graph.html'
  
 class MyLogoutView(LogoutView):
     template_name = 'logout.html'
@@ -40,12 +42,4 @@ class MyUserView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
-        return context
-
-class MyOtherView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/other.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['users'] = User.objects.exclude(username=self.request.user.username)
         return context
