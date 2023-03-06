@@ -33,7 +33,7 @@ class MyLoginView(LoginView):
 class GraphView():
    template_name = 'graph.html'
  
-class MyLogoutView(LoginRequiredMixin,LogoutView):
+class MyLogoutView(LogoutView):
     template_name = 'logout.html'
 
 class MyUserView(LoginRequiredMixin, TemplateView):
