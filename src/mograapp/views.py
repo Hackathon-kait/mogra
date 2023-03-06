@@ -25,6 +25,8 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
+class GraphView():
+   template_name = 'graph.html'
 """ 
 class MyLogoutView(LogoutView):
     template_name = 'login_app/logout.html'
@@ -45,3 +47,5 @@ class MyOtherView(LoginRequiredMixin, TemplateView):
         context['users'] = User.objects.exclude(username=self.request.user.username)
         return context
  """
+
+

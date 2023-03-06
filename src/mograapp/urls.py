@@ -10,4 +10,5 @@ urlpatterns = [
     #path('logout/', views.MyLogoutView.as_view(), name='logout'),
     #path('user/', views.MyUserView.as_view(), name='user'),
     #path('other/', views.MyOtherView.as_view(), name='other'),
+    path('graph/', views.GraphView.as_view(), name='graph'),
 ]
