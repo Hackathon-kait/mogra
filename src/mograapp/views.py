@@ -13,7 +13,7 @@ def mografunction(request):
 class MySignupView(CreateView):
     template_name = 'signup.html'
     form_class = SignupForm
-    success_url = '/login_app/user/'
+    success_url = '/home/'
     
     def form_valid(self, form):
         result = super().form_valid(form)
@@ -25,23 +25,14 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
-""" 
+ 
 class MyLogoutView(LogoutView):
-    template_name = 'login_app/logout.html'
+    template_name = 'logout.html'
 
 class MyUserView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/user.html'
+    template_name = 'home.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
-
-class MyOtherView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/other.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['users'] = User.objects.exclude(username=self.request.user.username)
-        return context
- """
