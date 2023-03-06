@@ -30,6 +30,7 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
+ 
 class MyLogoutView(LogoutView):
     template_name = 'logout.html'
 
