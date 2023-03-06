@@ -30,9 +30,6 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
-class GraphView():
-   template_name = 'graph.html'
- 
 class MyLogoutView(LogoutView):
     template_name = 'logout.html'
 
@@ -71,16 +68,4 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-    
-class MyGraphView(TemplateView):
-    template_name = "graph.html"
-    
-    def eventListView(request):
-        ctx = {}
-        qs = EventsModel.objects.all()
-        ctx["object_list"] = qs
-        my = {
-        'apple': 'Django'
-        }
-        return render(request, 'graph.html',my)
     
