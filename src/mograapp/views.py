@@ -3,10 +3,11 @@ from .forms import SignupForm, LoginForm,EventsModelForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView,DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from .models import EventsModel
+from django.urls import reverse_lazy
 # Create your views here.
 
 class MograView(TemplateView):
@@ -58,3 +59,13 @@ class MyEventCreateView(CreateView):
         
         result = super().form_valid(form)
         return result
+    
+class DetailDeleteView(LoginRequiredMixin,DeleteView):
+    template_name = "detail.html"
+    model = EventsModel
+    success_url = '/home/'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)
+    
