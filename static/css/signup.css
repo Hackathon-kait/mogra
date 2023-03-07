@@ -32,4 +32,12 @@ p{
     padding:0% 10% 0% 15%;
 }
 
-/* テストです */
+p:nth-child(8) input {
+   
+   border: 0px solid rgba(0, 0, 0, 0.34);
+   text-decoration:underline solid #000000;
+   position: absolute;
+    width: 72px;
+    height: 41px;
+    left: 1498px;
+  }
