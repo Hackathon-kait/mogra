@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+
+
 urlpatterns = [
     path('',views.MograView.as_view(), name='mogra'),
     path('signup/', views.MySignupView.as_view(), name='signup'),
