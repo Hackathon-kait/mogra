@@ -12,7 +12,7 @@ class EventsModel(models.Model):
     title = models.CharField(max_length=30)
     detail = models.TextField(null=True, blank=True)
     evaluation = models.PositiveSmallIntegerField(default=0)
-    date_at = models.DateField
+    date_at = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)    
 

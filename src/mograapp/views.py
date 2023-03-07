@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.detail import DetailView
+from .models import EventsModel
 # Create your views here.
 
 def mografunction(request):
@@ -36,3 +38,9 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
+
+class EventDetailView(DetailView):
+    model = EventsModel
+    template_name = 'detail.html'
+    context_object_name = 'event'
+    pk_url_kwarg = 'uuid'
