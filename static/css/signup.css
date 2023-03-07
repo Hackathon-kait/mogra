@@ -1,0 +1,35 @@
+.logo {
+    text-align: center;
+    font-family: 'Yu Gothic UI';
+}
+
+.title {
+    text-align: center;
+    font-family: 'Yu Gothic UI';
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+.formfontfix {
+    font-family: 'Yu Gothic UI';
+    font-size: 30px;
+}
+
+
+input {
+    width: 90%;
+    height: 55px;
+    border-radius: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    padding-left: 16px;
+    font-size: 26px;
+}
+label,input{
+    display: block;
+}
+
+p{
+    padding:0% 10% 0% 15%;
+}
+
+/* テストです */

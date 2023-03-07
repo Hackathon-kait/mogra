@@ -1,0 +1,49 @@
+.main{
+    /* あとでbase.cssに記述 */
+    font-family: 'Yu Gothic UI';
+}
+.logo{
+    width:15%;
+    padding: 0% 60% 0% 0%;
+}
+.button{
+    width:7%;
+    padding: 0% 0% 0% 2%;
+}
+
+.titleimg{
+    width:90%;
+}
+.phrase{
+    text-align: center;
+    font-size:50px;
+    padding: 20% 0% 20% 0%;
+    text-decoration:underline solid #ECC39D;
+}
+.whatis{
+    width: 100%;
+}
+.features{
+    text-align: center;
+    font-size:50px;
+    padding: 5% 0% 5% 0%;
+}
+.concept{ 
+    font-size: 25px;
+    display: inline-block;
+    
+}
+.img{
+    width: 60%;
+}
+
+.top{
+    text-align: center;
+    font-size:50px;
+    padding: 20% 0% 10% 0%;
+    text-decoration:underline solid #000000;
+}
+
+.center{
+    text-align: center;
+}
