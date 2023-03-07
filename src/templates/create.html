@@ -1,18 +1,16 @@
-
 {% load static %}
 <!doctype html>
-<link rel="stylesheet" href="../static/css/login.css">
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <title>MOGRA</title>
 </head>
 <body>
-    <h1>ログイン</h1>
-    <form action="{% url 'login' %}" method="post">
+    <h1>イベント作成</h1>
+    <form action="{% url 'create' %}" method="post">
     {% csrf_token %}
         {{ form.as_p }}
-        <p><input type="submit" value="ログイン"></p>
+        <p><input type="submit" value="イベント作成"></p>
     </form>
 </body>
 </html>

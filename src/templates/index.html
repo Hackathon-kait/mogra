@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <link rel="stylesheet" href="{% static '/css/land.css' %}">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/land.css' %}">
     <title>MOGRA</title>
   </head>
   <body class ="main">
   
     <img src="{% static '/img/logo.png' %}" class ="logo">
-    <a href="https://hololive.hololivepro.com/"><img src="{% static '/img/sign.png' %}" class ="button"></a>
+    <a href="https://hololive.hololivepro.com/"><img src="{% static '/img/signup.png' %}" class ="button"></a>
     <a href="https://genshin.hoyoverse.com/ja"><img src="{% static '/img/login.png' %}" class ="button"></a>
     <img src="{% static '/img/title.png' %}" class ="titleimg">
     <div class = "phrase">
@@ -42,7 +43,7 @@
     </div>
     
     <div class = "top">
-      <a href="index.html"><p>Top</p></a>
+      <a href="{% static '/css/land.css' %}"><p>Top</p></a>
     </div>
 
    
