@@ -1,23 +1,26 @@
-
 {% load static %}
 <!doctype html>
-<link rel="stylesheet" href="../static/css/signup.css">
+<link rel="stylesheet" href="{% static '/css/signup.css' %}">
+<!-- <link rel="stylesheet" href="{% static '/css/reset.css' %}"> -->
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>ユーザー登録</title>
+    <title>アカウント登録</title>
 </head>
 <body>
-    <h1 class ="test">ユーザー登録</h1>
-
-    <div class = "test">
-    <p>konnhuabsua</p>
+    <div class ="logo">
+        <img src="{% static '/img/logo.png' %}" class ="logo">
+    </div>
+    <div class ="title">
+        <h1>アカウント登録</h1>
+    </div>
+    <div class ="formfontfix">
+        <form action="{% url 'signup' %}" method="post" class = "formfix">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <p><input type="submit" value="登録"></p>
+        </form>
     </div>
 
-    <form action="{% url 'signup' %}" method="post">
-    {% csrf_token %}
-        {{ form.as_p }}
-        <p><input type="submit" value="登録"></p>
-    </form>
 </body>
 </html>
