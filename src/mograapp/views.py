@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import SignupForm, LoginForm
+from .forms import SignupForm, LoginForm,EventsModelForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
@@ -9,8 +9,9 @@ from django.views.generic.detail import DetailView
 from .models import EventsModel
 # Create your views here.
 
-def mografunction(request):
-    return render(request,'index.html')
+class MograView(TemplateView):
+    template_name='index.html'
+
 
 class MySignupView(CreateView):
     template_name = 'signup.html'
@@ -44,3 +45,16 @@ class EventDetailView(DetailView):
     template_name = 'detail.html'
     context_object_name = 'event'
     pk_url_kwarg = 'uuid'
+    
+class MyEventCreateView(CreateView):
+    template_name = 'create.html'
+    form_class = EventsModelForm
+    success_url = '/home/'
+    
+    def form_valid(self, form):
+        new_event=form.save(commit=False)
+        new_event.user=self.request.user
+        new_event.save()
+        
+        result = super().form_valid(form)
+        return result
