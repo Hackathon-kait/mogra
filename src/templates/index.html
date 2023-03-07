@@ -9,8 +9,8 @@
   <body class ="main">
   
     <img src="{% static '/img/logo.png' %}" class ="logo">
-    <a href="https://hololive.hololivepro.com/"><img src="{% static '/img/signup.png' %}" class ="button"></a>
-    <a href="https://genshin.hoyoverse.com/ja"><img src="{% static '/img/login.png' %}" class ="button"></a>
+    <a href="{% url 'signup' %}"><img src="{% static '/img/signup.png' %}" class ="button"></a>
+    <a href="{% url 'login' %}"><img src="{% static '/img/login.png' %}" class ="button"></a>
     <img src="{% static '/img/title.png' %}" class ="titleimg">
     <div class = "phrase">
     <p>さあ　あなたの人生を可視化しましょう</p>
@@ -43,7 +43,7 @@
     </div>
     
     <div class = "top">
-      <a href="{% static '/css/land.css' %}"><p>Top</p></a>
+      <a href="{% url 'mogra' %}"><p>Top</p></a>
     </div>
 
    
