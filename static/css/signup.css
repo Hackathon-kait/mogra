@@ -1,6 +1,5 @@
 .logo {
     text-align: center;
-    font-family: 'Yu Gothic UI';
 }
 
 .title {
@@ -29,7 +28,7 @@ label,input{
 }
 
 p{
-    padding:0% 10% 0% 15%;
+    padding:0% 10% 2% 15%;
 }
 
 p:nth-child(6) input {
