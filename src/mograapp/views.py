@@ -30,7 +30,7 @@ class MyLoginView(LoginView):
     form_class = LoginForm
 
  
-class MyLogoutView(LogoutView):
+class MyLogoutView(LoginRequiredMixin,LogoutView):
     template_name = 'logout.html'
 
 class MyUserView(LoginRequiredMixin, TemplateView):
@@ -41,13 +41,13 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context['user'] = self.request.user
         return context
 
-class EventDetailView(DetailView):
+class EventDetailView(LoginRequiredMixin,DetailView):
     model = EventsModel
     template_name = 'detail.html'
     context_object_name = 'event'
     pk_url_kwarg = 'uuid'
     
-class MyEventCreateView(CreateView):
+class MyEventCreateView(LoginRequiredMixin,CreateView):
     template_name = 'create.html'
     form_class = EventsModelForm
     success_url = '/home/'
