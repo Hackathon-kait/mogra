@@ -30,7 +30,7 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
-
+ 
 class MyLogoutView(LogoutView):
     template_name = 'logout.html'
 
@@ -42,14 +42,6 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context['user'] = self.request.user
         return context
 
-class MyOtherView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/other.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['users'] = User.objects.exclude(username=self.request.user.username)
-        return context
- 
 class EventDetailView(DetailView):
     model = EventsModel
     template_name = 'detail.html'
