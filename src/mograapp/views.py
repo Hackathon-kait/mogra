@@ -3,7 +3,7 @@ from .forms import SignupForm, LoginForm,EventsModelForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import TemplateView, CreateView,DeleteView
+from django.views.generic import TemplateView, CreateView,DeleteView,UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from .models import EventsModel
@@ -69,3 +69,9 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
     
+#詳細情報を更新
+class DetailUpdateView(LoginRequiredMixin, UpdateView):
+    model = EventsModel
+    form_class = EventsModelForm
+    success_url = '/home/'
+    template_name = 'update.html'

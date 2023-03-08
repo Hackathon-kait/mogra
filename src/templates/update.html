@@ -1,0 +1,16 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>MOGRA</title>
+</head>
+<body>
+    <h1>Edit event</h1>
+    <form   method="post" enctype="multipart/form-data" id="myForm">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="イベント編集"></p>
+    </form>
+</body>
+</html>
