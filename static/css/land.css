@@ -1,12 +1,17 @@
 .main{
     font-family: 'Yu Gothic UI';
 }
+.head{
+    padding: 10px 0px 10px 0px;
+}
 .logo{
-    width:15%;
-    padding: 0% 60% 0% 0%;
+    height:50px;
+    padding: 0px 70% 0px 0px;
 }
 .button{
-    width:7%;
+    position: relative;
+    height:20px;
+    top:-20px;
     padding: 0% 0% 0% 2%;
 }
 
@@ -29,7 +34,8 @@
 }
 .concept{ 
     font-size: 25px;
-    
+    width: 400px;
+    height:200px;
     display: inline-block;
     
 }
@@ -39,11 +45,12 @@
 
 .top{
     text-align: center;
-    font-size:50px;
-    padding: 20% 0% 10% 0%;
+    font-size:20px;
+    padding: 8% 0% 8% 0%;
     text-decoration:underline solid #000000;
 }
 
 .center{
     text-align: center;
+    
 }
