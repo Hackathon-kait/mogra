@@ -5,10 +5,10 @@ from .models import EventsModel
 from django.forms.widgets import DateInput
 
 class SignupForm(UserCreationForm):
-    username = forms.CharField(max_length=254, required=True, help_text='')
-    email = forms.EmailField(max_length=254, required=True, help_text='')
-    password1 = forms.CharField(max_length=254, required=True,widget=forms.PasswordInput,help_text='')
-    password2 = forms.CharField(max_length=254, required=True,widget=forms.PasswordInput,help_text='')
+    username = forms.CharField(label="氏名",max_length=254, required=True, help_text='')
+    email = forms.EmailField(label="メールアドレス",max_length=254, required=True, help_text='')
+    password1 = forms.CharField(label="パスワード",max_length=254, required=True,widget=forms.PasswordInput,help_text='')
+    password2 = forms.CharField(label="パスワード再入力",max_length=254, required=True,widget=forms.PasswordInput,help_text='')
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
