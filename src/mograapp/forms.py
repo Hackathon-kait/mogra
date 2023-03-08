@@ -20,15 +20,15 @@ class EventsModelForm(forms.ModelForm):
     class Meta:
         model = EventsModel
         fields = ['title', 'detail', 'evaluation','date_at']
-
+        
         labels = {
             'title': 'タイトル',
             'detail': '詳細',
-            'eevaluation': '評価',
+            'evaluation': '評価',
             'date_at': '日時',
         }
         widgets = {
-                'date_at': DateInput(attrs={'type': 'date'})
+                'date_at': DateInput(attrs={'type': 'date'}),
         }
     def clean_evaluation(self):
         value = self.cleaned_data['evaluation']
