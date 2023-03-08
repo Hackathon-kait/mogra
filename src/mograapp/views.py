@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from .models import EventsModel
 from django.urls import reverse_lazy
+from django.http.response import HttpResponse
 # Create your views here.
 
 class MograView(TemplateView):
