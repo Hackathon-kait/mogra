@@ -72,9 +72,15 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
     
-#詳細情報を更新
-class DetailUpdateView(LoginRequiredMixin, UpdateView):
-    model = EventsModel
-    form_class = EventsModelForm
-    success_url = '/home/'
-    template_name = 'update.html'
+class MyGraphView(TemplateView):
+    template_name = "graph.html"
+    
+    def eventListView(request):
+        ctx = {}
+        qs = EventsModel.objects.all()
+        ctx["object_list"] = qs
+        my = {
+        'apple': 'Django'
+        }
+        return render(request, 'graph.html',my)
+    
