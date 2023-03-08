@@ -14,5 +14,10 @@
   <p>評価: {{ event.evaluation }}</p>
   <p>日付: {{ event.date_at }}</p>
   </ul>
+  <form action="{% url 'delete' event.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit">削除</button>
+    <a href="{% url 'home' %}">戻る</a>
+  </form>
 </body>
 </html>
