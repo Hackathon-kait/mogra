@@ -50,3 +50,43 @@ class MyOtherView(LoginRequiredMixin, TemplateView):
         context['users'] = User.objects.exclude(username=self.request.user.username)
         return context
  
+class EventDetailView(DetailView):
+    model = EventsModel
+    template_name = 'detail.html'
+    context_object_name = 'event'
+    pk_url_kwarg = 'uuid'
+    
+class MyEventCreateView(CreateView):
+    template_name = 'create.html'
+    form_class = EventsModelForm
+    success_url = '/home/'
+    
+    def form_valid(self, form):
+        new_event=form.save(commit=False)
+        new_event.user=self.request.user
+        new_event.save()
+        
+        result = super().form_valid(form)
+        return result
+    
+class DetailDeleteView(LoginRequiredMixin,DeleteView):
+    template_name = "detail.html"
+    model = EventsModel
+    success_url = '/home/'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)
+    
+class MyGraphView(TemplateView):
+    template_name = "graph.html"
+    
+    def eventListView(request):
+        ctx = {}
+        qs = EventsModel.objects.all()
+        ctx["object_list"] = qs
+        my = {
+        'apple': 'Django'
+        }
+        return render(request, 'graph.html',my)
+    
