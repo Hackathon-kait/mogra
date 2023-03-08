@@ -68,3 +68,6 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
     
+class MyGraphView(TemplateView):
+    templete_name = "graph.html"
+    
