@@ -6,7 +6,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 <body>
-<p>This is {{apple}} test</p>
+  {% for obj in event_list %}<p>{{ obj.evaluation }}</p>{% endfor %}
 <!-- グラフ描画エリア -->
 <div style="width:100%">
   <canvas id="canvas"></canvas>
@@ -38,10 +38,12 @@ document.getElementById('btn').onclick = function() {
 // グラフデータをランダムに生成
 function getRandom() {
   chartVal = []; // 配列を初期化
-  var length = 12;
+  var length = parseInt('{{eventnum}}');
+  var eva = parseInt()
   for (i = 0; i < length; i++) {
-    chartVal.push(Math.floor(Math.random() * 20));
+    chartVal.push('{% for obj in event_list %}{%cycle'obj.evaluation'%}{% endfor %}');
   }
+  console.log(chartVal);
 }
 
 

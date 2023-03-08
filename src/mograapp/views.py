@@ -82,16 +82,24 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
     
-class MyGraphView(TemplateView):
+class MyGraphView(LoginRequiredMixin,TemplateView):
     template_name = "graph.html"
-    
-    def eventListView(request):
-        ctx = {}
-        qs = EventsModel.objects.all()
-        ctx["object_list"] = qs
-        my = {
-        'apple': 'Django'
-        }
-        return render(request, 'graph.html',my)
+    def get(self, request, *args, **kwargs):
+        event_list = []
+        eventnum = 0
+        #ログイン中のユーザーのIDを取得
+        user_id = self.request.user
+        #ユーザーIDが一致する本を探す
+        event = EventsModel.objects.filter(user=user_id).order_by('date_at')
+        eventnum = EventsModel.objects.filter(user=user_id).order_by('date_at').count()
+        event_list.extend(event)
+        context = self.get_context_data(**kwargs)
+        context["event_list"] = event_list
+        context["eventnum"] = eventnum
+
+        return self.render_to_response(context)
+
+
+        
     
 >>>>>>> d256493 (change)
