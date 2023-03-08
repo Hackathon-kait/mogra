@@ -1,5 +1,4 @@
 .main{
-    /* あとでbase.cssに記述 */
     font-family: 'Yu Gothic UI';
 }
 .logo{
@@ -30,6 +29,7 @@
 }
 .concept{ 
     font-size: 25px;
+    
     display: inline-block;
     
 }
