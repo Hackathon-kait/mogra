@@ -41,9 +41,9 @@ function getRandom() {
   var length = parseInt('{{eventnum}}');
   var eva = parseInt()
   for (i = 0; i < length; i++) {
-    chartVal.push('{% for obj in event_list %}{%cycle'obj.evaluation'%}{% endfor %}');
+    chartVal.push('');
   }
-  console.log(chartVal);
+  console.log('{% for obj in event_list %}{{ obj.evaluation }}{% endfor %}');
 }
 
 
@@ -68,7 +68,7 @@ function drawChart(){
             labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             datasets: [{
               label: 'モチベーションマップ',
-              data: chartVal,
+              data: '{% for obj in event_list %}{{ obj.evaluation }}{% endfor %}',
               borderColor: '#f88',
             }]
           },
