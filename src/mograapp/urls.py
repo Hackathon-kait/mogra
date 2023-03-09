@@ -8,10 +8,11 @@ urlpatterns = [
     path('signup/', views.MySignupView.as_view(), name='signup'),
     path('login/', views.MyLoginView.as_view(), name='login'),
     path('logout/', views.MyLogoutView.as_view(), name='logout'),
-    path('home/', views.MyUserView.as_view(), name='home'),
+    # path('home/', views.MyUserView.as_view(), name='home'),
     path('event/<uuid:uuid>/', views.EventDetailView.as_view(), name='event_detail'),
     path('create/',views.MyEventCreateView.as_view(),name='create'),
     path('delete/<uuid:pk>',views.DetailDeleteView.as_view(),name='delete'),
-    path('graph/',views.MyGraphView.as_view(),name='graph'),
+    path('update/<uuid:pk>/',views.DetailUpdateView.as_view(), name='update'),
+    path('home/',views.MyGraphView.as_view(),name='home'),
 ]
 

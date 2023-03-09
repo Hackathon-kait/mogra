@@ -79,7 +79,13 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-    
+
+class DetailUpdateView(LoginRequiredMixin, UpdateView):
+    model = EventsModel
+    form_class = EventsModelForm
+    success_url = '/home/'
+    template_name = 'update.html'
+
 class MyGraphView(LoginRequiredMixin,TemplateView):
     template_name = "graph.html"
     def get(self, request, *args, **kwargs):
