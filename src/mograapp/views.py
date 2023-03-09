@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from .models import EventsModel
 from django.urls import reverse_lazy
+from django.http.response import HttpResponse
 # Create your views here.
 
 class MograView(TemplateView):
@@ -29,8 +30,10 @@ class MyLoginView(LoginView):
     template_name = 'login.html'
     form_class = LoginForm
 
+class GraphView():
+   template_name = 'graph.html'
  
-class MyLogoutView(LoginRequiredMixin,LogoutView):
+class MyLogoutView(LogoutView):
     template_name = 'logout.html'
 
 class MyUserView(LoginRequiredMixin, TemplateView):
@@ -41,13 +44,21 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context['user'] = self.request.user
         return context
 
-class EventDetailView(LoginRequiredMixin,DetailView):
+class MyOtherView(LoginRequiredMixin, TemplateView):
+    template_name = 'login_app/other.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['users'] = User.objects.exclude(username=self.request.user.username)
+        return context
+
+class EventDetailView(DetailView):
     model = EventsModel
     template_name = 'detail.html'
     context_object_name = 'event'
     pk_url_kwarg = 'uuid'
     
-class MyEventCreateView(LoginRequiredMixin,CreateView):
+class MyEventCreateView(CreateView):
     template_name = 'create.html'
     form_class = EventsModelForm
     success_url = '/home/'
@@ -68,10 +79,31 @@ class DetailDeleteView(LoginRequiredMixin,DeleteView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-    
-#詳細情報を更新
+
 class DetailUpdateView(LoginRequiredMixin, UpdateView):
     model = EventsModel
     form_class = EventsModelForm
     success_url = '/home/'
     template_name = 'update.html'
+
+class MyGraphView(LoginRequiredMixin,TemplateView):
+    template_name = "graph.html"
+    def get(self, request, *args, **kwargs):
+        event_list = []
+        eventnum = 0
+        #ログイン中のユーザーのIDを取得
+        user_id = self.request.user
+        #ユーザーIDが一致する本を探す
+        event = EventsModel.objects.filter(user=user_id).order_by('date_at')
+        eventnum = EventsModel.objects.filter(user=user_id).order_by('date_at').count()
+        event_list.extend(event)
+        context = self.get_context_data(**kwargs)
+        context["event_list"] = event_list
+        context["eventnum"] = eventnum
+
+        return self.render_to_response(context)
+
+
+        
+    
+
