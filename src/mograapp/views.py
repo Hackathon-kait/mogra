@@ -44,7 +44,6 @@ class MyUserView(LoginRequiredMixin, TemplateView):
         context['user'] = self.request.user
         return context
 
-<<<<<<< HEAD
 class MyOtherView(LoginRequiredMixin, TemplateView):
     template_name = 'login_app/other.html'
 
@@ -53,7 +52,6 @@ class MyOtherView(LoginRequiredMixin, TemplateView):
         context['users'] = User.objects.exclude(username=self.request.user.username)
         return context
 
-=======
 class EventDetailView(DetailView):
     model = EventsModel
     template_name = 'detail.html'
@@ -102,4 +100,4 @@ class MyGraphView(LoginRequiredMixin,TemplateView):
 
         
     
->>>>>>> d256493 (change)
+
