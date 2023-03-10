@@ -1,71 +1,75 @@
-
+{% load static %}
+<!doctype html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<title>test</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
+
 <body>
-    <!-- グラフ描画エリア -->
-    <div style="width:100%">
-      <canvas id="canvas"></canvas>
-    </div>
-  
-    <!-- グラフ更新ボタン -->
-    <button type="button" id="btn"><a href="{% url 'create'%}">イベントを追加</a></button>
-  
+  {% include "header.html" %}
+  <!-- グラフ描画エリア -->
+  <div style="width:100%">
+    <canvas id="canvas"></canvas>
+  </div>
 
-<script>
-  var chartVal = []; // グラフデータ（描画するデータ）
-
-  // ページ読み込み時にグラフを描画
-  getChartData(); // グラフデータを取得
-  drawChart(); // グラフ描画処理を呼び出す
+  <!-- グラフ更新ボタン -->
+  <button type="button" id="btn"><a href="{% url 'create'%}">イベントを追加</a></button>
 
 
-  // ボタンをクリックしたら、グラフを再描画
-  document.getElementById('btn').onclick = function() {
-    // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
-    if (myChart) {
-      myChart.destroy();
+  <script>
+    var chartVal = []; // グラフデータ（描画するデータ）
+
+    // ページ読み込み時にグラフを描画
+    getChartData(); // グラフデータを取得
+    drawChart(); // グラフ描画処理を呼び出す
+
+
+    // ボタンをクリックしたら、グラフを再描画
+    document.getElementById('btn').onclick = function () {
+      // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
+      if (myChart) {
+        myChart.destroy();
+      }
+
+      getChartData(); // グラフデータを取得
+      drawChart(); // グラフを再描画
     }
 
-    getChartData(); // グラフデータを取得
-    drawChart(); // グラフを再描画
-  }
-
-  // グラフデータを取得
-  function getChartData() {
-    chartVal = []; // 配列を初期化
-    {% for obj in event_list %}
+    // グラフデータを取得
+    function getChartData() {
+      chartVal = []; // 配列を初期化
+      {% for obj in event_list %}
       chartVal.push({
         x: '{{ obj.date_at|date:"n/j" }}',
         y: {{ obj.evaluation }},
-        uuid: '{{ obj.uuid }}'
+    uuid: '{{ obj.uuid }}'
       });
     {% endfor %}
   }
 
-  // グラフ描画処理
-function drawChart(){
-  let lineCtx = document.getElementById("canvas");
-  Chart.defaults.global.elements.point = {
-    radius: 5,
-    pointStyle: 'circle',
-    hitRadius: 20,
-    hoverRadius: 20,
-  };
-  Chart.defaults.global.elements.line = {
-    tension: 0,
-    borderDash: [],
-  };
-  // 線グラフの設定
-  let lineConfig = {
-    type: 'line',
-    data: {
-      // X軸のラベル
-      labels: [
-        {% for obj in event_list %}
+    // グラフ描画処理
+    function drawChart() {
+      let lineCtx = document.getElementById("canvas");
+      Chart.defaults.global.elements.point = {
+        radius: 5,
+        pointStyle: 'circle',
+        hitRadius: 20,
+        hoverRadius: 20,
+      };
+      Chart.defaults.global.elements.line = {
+        tension: 0,
+        borderDash: [],
+      };
+      // 線グラフの設定
+      let lineConfig = {
+        type: 'line',
+        data: {
+          // X軸のラベル
+          labels: [
+            {% for obj in event_list %}
           '{{ obj.date_at|date:"n/j" }}',
         {% endfor %}
       ],
@@ -80,8 +84,8 @@ function drawChart(){
         // Y軸の最大値・最小値、目盛りの範囲などを設定する
         y: {
           suggestedMin: 0,
-          suggestedMax: 5,
-          ticks: {
+            suggestedMax: 5,
+              ticks: {
             stepSize: 1,
           }
         }
@@ -95,12 +99,13 @@ function drawChart(){
       }
     }
   };
-  let lineChart = new Chart(lineCtx, lineConfig);
+    let lineChart = new Chart(lineCtx, lineConfig);
 }
 
 
-</script>
+  </script>
 
-  
+
 </body>
+
 </html>

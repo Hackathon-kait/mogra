@@ -1,0 +1,50 @@
+img {
+  height: 42px;
+}
+
+.logo {
+
+  margin: 10px 0 0 30px;
+  float: left;
+}
+
+.logo img {
+  height: 60px;
+}
+
+
+ul.list {
+
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+ul.list li {
+  padding: 0 10px;
+  position: relative;
+  top: 8px;
+}
+
+#headerlink {
+  position: relative;
+  top: -13px;
+  width: 133px;
+  height: 77px;
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 36px;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  color: #1E1E1E;
+}
+
+hr {
+  height: 0.8px;
+  background-color: #000000;
+  border: none;
+  color: #000000;
+  width: 99%;
+}
