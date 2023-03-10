@@ -30,13 +30,12 @@ label,input{
 p{
     padding:0% 10% 2% 15%;
 }
-p:nth-child(6) input {
-   
+p:nth-child(4) input {
+  
    border: 0px solid rgba(0, 0, 0, 0.34);
    text-decoration:underline solid #000000;
    position: absolute;
-   width: 72px;
+   width: 120px;
    height: 41px;
    left: 980px; 
   }
-  /* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */
