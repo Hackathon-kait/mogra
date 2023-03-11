@@ -17,6 +17,7 @@
 
 <script>
   var chartVal = []; // グラフデータ（描画するデータ）
+  var userName;
 
   // ページ読み込み時にグラフを描画
   getChartData(); // グラフデータを取得
@@ -37,13 +38,16 @@
   // グラフデータを取得
   function getChartData() {
     chartVal = []; // 配列を初期化
+    userName = "";
     {% for obj in event_list %}
       chartVal.push({
         x: '{{ obj.date_at|date:"n/j" }}',
         y: {{ obj.evaluation }},
         uuid: '{{ obj.uuid }}'
       });
+      userName = '{{obj.user}}';
     {% endfor %}
+    
   }
 
   // グラフ描画処理
@@ -70,7 +74,7 @@ function drawChart(){
         {% endfor %}
       ],
       datasets: [{
-        label: '評価',
+        label: userName,
         data: chartVal,
         borderColor: '#f88',
       }]
@@ -86,13 +90,21 @@ function drawChart(){
           }
         }
       },
+      tooltips:{
+        backgroundColor: "rgba(19, 56, 95, 0.9)",
+        callbacks:{
+          title:function(tooltipItem,data){
+            return chartVal[elements[0]._index].title;
+          }
+        }
+      },
       onClick: function(event, elements) {
         if (elements.length > 0) {
           let datasetIndex = elements[0].datasetIndex;
           let index = elements[0].index;
           window.location.href = "/event/" + chartVal[elements[0]._index].uuid + "/";
         }
-      }
+      },
     }
   };
   let lineChart = new Chart(lineCtx, lineConfig);
