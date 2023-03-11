@@ -1,40 +1,5 @@
-{% load static %}
-<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <title>test</title>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-  <link rel="stylesheet" href="{% static 'css/graph.css' %}" />
-</head>
-
-<body>
-  {% include "header.html" %}
-  <!-- グラフ描画エリア -->
-  <div class="graph">
-    <canvas id="canvas"></canvas>
-  </div>
-  
-<script>
-  var chartVal = []; // グラフデータ（描画するデータ）
-  var userName;
-
-    // ページ読み込み時にグラフを描画
-    getChartData(); // グラフデータを取得
-    drawChart(); // グラフ描画処理を呼び出す
-
-
-    // ボタンをクリックしたら、グラフを再描画
-    document.getElementById('btn').onclick = function () {
-      // すでにグラフ（インスタンス）が生成されている場合は、グラフを破棄する
-      if (myChart) {
-        myChart.destroy();
-      }
-
-      getChartData(); // グラフデータを取得
-      drawChart(); // グラフを再描画
-    }
+var chartVal = []; // グラフデータ（描画するデータ）
+var userName;
 
   // グラフデータを取得
   function getChartData() {
@@ -58,8 +23,8 @@
       Chart.defaults.global.elements.point = {
         radius: 5,
         pointStyle: 'circle',
-        hitRadius: 10,
-        hoverRadius: 10,
+        hitRadius: 20,
+        hoverRadius: 20,
         backgroundColor: '#blue',
       };
       Chart.defaults.global.elements.line = {
@@ -87,11 +52,8 @@
       scales: {
         // Y軸の最大値・最小値、目盛りの範囲などを設定する
         y: {
-          suggestedMin: 0,
-          suggestedMax: 10,
-          ticks: {
-            stepSize: 1,
-          }
+          min: 0,
+          max: 10,
         }
       },
       tooltips:{
@@ -114,10 +76,3 @@
     let lineChart = new Chart(lineCtx, lineConfig);
 }
 
-
-  </script>
-
-
-</body>
-
-</html>
