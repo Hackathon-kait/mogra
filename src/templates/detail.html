@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOGRA</title>
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 <body>
@@ -17,11 +18,11 @@
   <p>評価: {{ event.evaluation }}</p>
   <p>日付: {{ event.date_at }}</p>
   </ul>
-  <form action="{% url 'delete' event.pk %}" method="post">
-    {% csrf_token %}
-    <button type="submit">削除</button>
-    <a href="{% url 'home' %}">戻る</a>
-  </form>
+  <div id="delete">
+    <button id="confirmation-btn">削除</button>
+  </div>
+  {% include 'delete-modal.html' %}
  <button><a href="{% url 'update' event.uuid %}">編集</a></button>
+ <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 </body>
 </html>
