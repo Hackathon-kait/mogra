@@ -1,0 +1,15 @@
+<div id="confirmation-modal">
+  <div class="modal-content">
+    <div class="modal-back">
+      <p class="caveat">削除</p>
+    </div>
+      <div class="modal-header">本当に削除しますか？</div>
+      <div id="modal-button">
+        <button type="button" id="modal-close-btn">NO</button>
+        <form action="{% url 'delete' event.pk %}" method="post">
+          {% csrf_token %}
+          <button type="submit" id="modal-confirmation-btn">削除</button>
+        </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>MOGRA</title>
+</head>
+<body>
+    <h1>ここはホームです<h1>
+    <h1>{{user.username}}</h1>
+    <p>連絡先：{{user.email}}</p>
+    <p>アカウント作成日：{{user.date_joined}}</p>
+    <p><a href="{% url 'create' %}">イベント作成</a></p>
+    <p><a href="{% url 'logout' %}">ログアウト</a></p>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.logo img{
+    position:relative;
+    height: 136px;
+    left: 20px;
+}
+.logo{
+    text-align: center;
+}
+.title {
+    text-align: center;
+    font-family: 'Yu Gothic UI';
+    font-size: 26px;
+    font-weight: lighter;
+}
+.formfontfix {
+    font-family: 'Yu Gothic UI';
+    font-size: 20px;
+}
+input {
+    width: 90%;
+    height: 40px;
+    border-radius: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    padding-left: 16px;
+    font-size: 26px;
+}
+label,input{
+    display: block;
+}
+p{
+    padding:0% 10% 2% 15%;
+}
+p:nth-child(6) input {
+   
+   border: 0px solid rgba(0, 0, 0, 0.34);
+   text-decoration:underline solid #000000;
+   position: absolute;
+   width: 72px;
+   height: 41px;
+   left: 980px; 
+  }
+  /* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */

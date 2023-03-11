@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}" />
+<header>
+  <div class="logo">
+    <a  href="{% url 'home'%}"><img src="{% static 'img/logo.svg' %}"></a>
+  </div>
+  <div class="list-menu">
+    <ul class="list">
+      <li><img src="{% static 'img/addeventbtn.png' %}"><a id="headerlink" href="{% url 'create'%}">Add event</a>
+      <li><img src="{% static 'img/mypagebtn.png' %}"><a id="headerlink">My page</a>
+      <li><img src="{% static 'img/logoutbtn.png' %}"><a id="headerlink" href="{% url 'logout'%}">Log out</a>
+    </ul>
+  </div>
+  <hr>
+</header>

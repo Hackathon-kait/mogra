@@ -1,10 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>Hello World</title>
+    <link rel="stylesheet" href="{% static '/css/land.css' %}">
+    <title>MOGRA</title>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body class ="main">
+    <div class = "head">
+    <img src="{% static '/img/logo.svg' %}" class ="logo">
+    <a href="{% url 'signup' %}"><img src="{% static '/img/signup.svg' %}" class ="button"></a>
+    <a href="{% url 'login' %}"><img src="{% static '/img/login.svg' %}" class ="button"></a>
+    </div>
+
+    <img src="{% static '/img/title.png' %}" class ="titleimg">
+    <div class = "phrase">
+    <p>さあ　あなたの人生を可視化しましょう</p>
+    </div>
+    <img src="{% static '/img/whatis.png' %}" class ="whatis">
+    <div class = "features">
+    <p>features</p>
+    </div>
+    
+    <div class = "center">
+    <div class ="concept">
+      <img src="{% static '/img/concept1.png' %}" class ="img">
+      <p>より使いやすく。<br>
+        手書きで何度も書き直している時間を<br>
+        自分を見つめなおす時間にしましょう。</p>
+    </div>
+    <div class ="concept">
+      <img src="{% static '/img/concept2.png' %}" class ="img">
+      <p>より見やすく。<br>
+        ただでさえ絡み合い、認識しにくい<br>
+        これまで人生の出来事を可視化します。</p>
+    </div>
+    <div class ="concept">
+      <img src="{% static '/img/concept3.png' %}" class ="img">
+      <p>より多くの出来事を。<br>
+        あなたは多くのことを経験してきました。<br>
+        あらゆることをグラフに記してみましょう。</p>
+    </div>
+    </div>
+    
+    <div class = "top">
+      <a href="{% url 'mogra' %}"><p>Top</p></a>
+    </div>
+
+   
+
+
   </body>
 </html>
