@@ -1,0 +1,148 @@
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  width: 700px;
+  height: 400px;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.modal-back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: #FBFBFB;
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: 2px solid #D9D9D9;
+}
+p.confirmation{
+  margin: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  color: #06B6D4;
+}
+p.caveat {
+  margin: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  color: #FF7B7B;
+}
+
+#confirmation-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+
+.modal-header{
+  position: absolute;
+  width: 700px;
+  left: 0;
+  font-family: 'Noto_Sans_JP';
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0.08em;
+  color: #000000;
+  cursor: default;
+}
+#modal-button {
+  width: 700px;
+  height: 108px;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  align-items: flex-end;
+  background: #6AF3DB;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.form-group label {
+  display: none;
+}
+
+.modal_button {
+  width: 700px;
+  height: 108px;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  align-items: flex-end;
+  background: #6AF3DB;
+  border-radius: 0px 0px 20px 20px;
+}
+
+
+/* キャンセルボタン */
+
+#modal-close-btn {
+  position: absolute;
+  width: 200px;
+  height: 108px;
+  left: 150px;
+  bottom: 0;
+  background-color: #6AF3DB;
+  color: #115E59;
+  font-family: 'Noto_Sans_JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  box-sizing: border-box;
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #5EEAD4;
+  cursor: pointer;
+}
+
+#modal-close-btn:hover {
+  background: #5EEAD4;
+}
+
+/* OKボタン */
+
+#modal-confirmation-btn {
+  position: absolute;
+  width: 200px;
+  height: 108px;
+  left: 350px;
+  bottom: 0;
+  background-color: #6AF3DB;
+  color: #115E59;
+  font-family: 'Noto_Sans_JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  box-sizing: border-box;
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #5EEAD4;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #115E59;
+}
