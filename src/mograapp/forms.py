@@ -90,4 +90,38 @@ class ChangeUsernameForm(forms.Form):
         user.save()
         
 
+class ChangeEmailForm(forms.Form):
+    current_email = forms.EmailField(label='現在のメールアドレス')
+    new_email = forms.EmailField(label='新しいメールアドレス')
+    password = forms.CharField(label='パスワード', widget=forms.PasswordInput())
+
+    def __init__(self, user_id, *args, **kwargs):
+        self.user_id = user_id
+        super().__init__(*args, **kwargs)
+
+    def clean_current_email(self):
+        current_email = self.cleaned_data['current_email']
+        user = User.objects.get(id=self.user_id)
+        if current_email != user.email:
+            raise ValidationError('現在のメールアドレスが正しくありません。')
+        return current_email
+
+    def clean_new_email(self):
+        new_email = self.cleaned_data['new_email']
+        if User.objects.filter(email=new_email).exists():
+            raise ValidationError('このメールアドレスは既に使われています。')
+        return new_email
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        user = authenticate(username=User.objects.get(id=self.user_id).username, password=password)
+        if not user:
+            raise ValidationError('パスワードが正しくありません。')
+        return cleaned_data
+
+    def save(self):
+        user = User.objects.get(id=self.user_id)
+        user.email = self.cleaned_data['new_email']
+        user.save()
 

@@ -15,6 +15,7 @@ urlpatterns = [
     path('update/<uuid:pk>/',views.DetailUpdateView.as_view(), name='update'),
     path('home/',views.MyGraphView.as_view(),name='home'),
     path('passwordup/',views.ChangePasswordView.as_view(), name='passwordup'),
-    path('nameup/',views.ChangeUsernameView.as_view(),name='nameup')
+    path('nameup/',views.ChangeUsernameView.as_view(),name='nameup'),
+    path('emailup/',views.ChangeEmailView.as_view(),name='emailup'),
 ]
 

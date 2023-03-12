@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm,ChangeUsernameForm
+from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm,ChangeUsernameForm,ChangeEmailForm
 from django.contrib.auth import login,authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
@@ -147,5 +147,18 @@ class ChangeUsernameView(LoginRequiredMixin, View):
             return redirect('/home/')
         context = {'form': form}
         return render(request, self.template_name, context)
+    
+class ChangeEmailView(LoginRequiredMixin, View):
+    form_class = ChangeEmailForm
+    template_name = 'Emailup.html'
 
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'form': self.form_class(user_id=request.user.id)})
 
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(user_id=request.user.id, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'メールアドレスを変更しました。')
+            return redirect('/home/')
+        return render(request, self.template_name, {'form': form})
