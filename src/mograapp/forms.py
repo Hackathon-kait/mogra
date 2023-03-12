@@ -11,6 +11,13 @@ class SignupForm(UserCreationForm):
     email = forms.EmailField(label="メールアドレス",max_length=254, required=True, help_text='')
     password1 = forms.CharField(label="パスワード",max_length=254, required=True,widget=forms.PasswordInput,help_text='')
     password2 = forms.CharField(label="パスワード再入力",max_length=254, required=True,widget=forms.PasswordInput,help_text='')
+    
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("このメールアドレスはすでに登録されています。")
+        return email
+    
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
