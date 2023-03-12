@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm
+from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm,ChangeUsernameForm
 from django.contrib.auth import login,authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
@@ -129,3 +129,23 @@ class ChangePasswordView(LoginRequiredMixin,View):
             messages.success(request, 'パスワードを変更しました。')
             return redirect('/home/')
         return render(request, self.template_name, {'form': form})
+    
+class ChangeUsernameView(LoginRequiredMixin, View):
+    form_class = ChangeUsernameForm
+    template_name = 'usernameup.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(user_id=request.user.id)
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(user_id=request.user.id, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'アカウント名を変更しました。')
+            return redirect('/home/')
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+

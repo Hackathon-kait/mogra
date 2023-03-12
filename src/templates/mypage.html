@@ -11,6 +11,7 @@
     <h1>アカウント情報</h1>
     <p>アカウント情報の確認、変更を行います。</p>
     <p>氏名:{{user.username}}</p>
+    <a href="{% url 'nameup' %}">氏名変更</a>
     <p>メールアドレス:{{user.email}}</p>
     <p>パスワード:＊＊＊＊＊＊＊＊</p>
     <a href="{% url 'passwordup' %}">パスワード変更</a>

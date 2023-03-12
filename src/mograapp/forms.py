@@ -61,3 +61,33 @@ class ChangePasswordForm(forms.Form):
         if new_password and confirm_new_password and new_password != confirm_new_password:
             self.add_error('confirm_new_password', 'パスワードが一致しません。')
         return cleaned_data
+
+
+class ChangeUsernameForm(forms.Form):
+    new_username = forms.CharField(label="新しいアカウント名")
+    password = forms.CharField(label="現在のパスワード", widget=forms.PasswordInput())
+
+    def __init__(self, user_id, *args, **kwargs):
+        self.user_id = user_id
+        super().__init__(*args, **kwargs)
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        user = User.objects.get(id=self.user_id)
+        if not authenticate(username=user.username, password=password):
+            raise ValidationError('パスワードが間違っています。')
+        return password
+
+    def clean_new_username(self):
+        new_username = self.cleaned_data['new_username']
+        if User.objects.filter(username=new_username).exists():
+            raise ValidationError('このアカウント名は既に使われています。')
+        return new_username
+
+    def save(self):
+        user = User.objects.get(id=self.user_id)
+        user.username = self.cleaned_data['new_username']
+        user.save()
+        
+
+
