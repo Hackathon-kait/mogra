@@ -36,6 +36,6 @@ p:nth-child(6) input {
    position: absolute;
    width: 72px;
    height: 41px;
-   left: 1450px; 
+   left: 950px; 
   }
   /* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */

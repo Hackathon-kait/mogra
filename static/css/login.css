@@ -27,7 +27,7 @@ input {
 a{
     color: #5c5c5c;
     position: absolute;
-    left: 850px; 
+    left: 536px; 
     top:400px;
     font-family: 'Yu Gothic UI';
 }
@@ -50,5 +50,5 @@ p:last-child input {
     position: absolute;
     width: 120px;
     height: 41px;
-    left: 1450px; 
+    left: 950px; 
    }
