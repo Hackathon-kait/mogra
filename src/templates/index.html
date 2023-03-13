@@ -4,11 +4,22 @@
 <link rel="stylesheet" href="{% static '/css/land.css' %}">
 {% endblock %}
 {% block content %}
-<div class="head">
+
+<!-- <div class="head">
   <img src="{% static '/img/logo.svg' %}" class="logo">
   <a href="{% url 'signup' %}"><img src="{% static '/img/signup.svg' %}" class="button"></a>
   <a href="{% url 'login' %}"><img src="{% static '/img/login.svg' %}" class="button"></a>
+</div> -->
+
+<div class = "logo">
+<img src="{% static '/img/logo.svg' %}" class="logo">
 </div>
+<ul class="list">
+  <li><a href="{% url 'signup' %}"><img src="{% static '/img/signup.svg' %}" class="button"></a>
+  <li><a href="{% url 'login' %}"><img src="{% static '/img/login.svg' %}" class="button"></a>
+</ul>
+
+
 
 <img src="{% static '/img/title.png' %}" class="titleimg">
 <div class="phrase">

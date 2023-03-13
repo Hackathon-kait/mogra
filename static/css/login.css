@@ -24,18 +24,31 @@ input {
     padding-left: 16px;
     font-size: 26px;
 }
+a{
+    color: #5c5c5c;
+    position: absolute;
+    left: 850px; 
+    top:400px;
+    font-family: 'Yu Gothic UI';
+}
+
+
+
 label,input{
     display: block;
 }
 p{
     padding:0% 10% 2% 15%;
 }
-p:nth-child(4) input {
+
+
+
+p:last-child input {
   
-   border: 0px solid rgba(0, 0, 0, 0.34);
-   text-decoration:underline solid #000000;
-   position: absolute;
-   width: 120px;
-   height: 41px;
-   left: 980px; 
-  }
+    border: 0px solid rgba(0, 0, 0, 0.34);
+    text-decoration:underline solid #000000;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 1450px; 
+   }
