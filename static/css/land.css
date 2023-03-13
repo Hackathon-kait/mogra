@@ -4,10 +4,38 @@ body{
 .head{
     padding: 10px 0px 10px 0px;
 }
-.logo{
+/* .logo{
     height:50px;
     padding: 0px 70% 0px 0px;
-}
+} */
+
+  
+  .logo {
+  
+    margin: 10px 0 0 30px;
+    float: left;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+
+ul.list {
+
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  
+  ul.list li {
+    padding: 0 10px;
+    position: relative;
+    top: 50px;
+    right: 40px;
+  }
+
+
 .button{
     position: relative;
     height:20px;
@@ -16,7 +44,7 @@ body{
 }
 
 .titleimg{
-    width:90%;
+    width:100%;
 }
 .phrase{
     text-align: center;
