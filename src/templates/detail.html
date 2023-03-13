@@ -1,21 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
-  <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
-  {% endblock %}
-  {% block content %}
-  {% include "header.html" %}
-  <h1>詳細画面</h1>
+<link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+<link rel="stylesheet" href="{% static 'css/detail.css' %}" />
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+<div id="content">
+  <h1 id="title">Event detail</h1>
+  <div id="titleline"></div>
+  <h2 id="subtitle">イベントを詳細を確認します。</h2>
+  <div id="vertical_line"></div>
+  <h3 id="event_name">イベント名</h3>
+  <h3 id="event_detail">詳細</h3>
+  <h3 id="event_date">日時</h3>
+  <h3 id="event_evaluation">評価</h3>
+  <div id="btnline"></div>
+  <div id="btnline2"></div>
   <ul>
-  <p>イベント名:{{ event.title }}</p>
-  <p>詳細: {{ event.detail }}</p>
-  <p>評価: {{ event.evaluation }}</p>
-  <p>日付: {{ event.date_at }}</p>
+    <p id="id_title">{{ event.title }}</p>
+    <p id="id_detail">{{ event.detail }}</p>
+
+
+    <div id="id_evaluation">
+      {% if event.evaluation == 0 %}
+      <span>最低</span>
+      {% elif event.evaluation == 10 %}
+      <span>最高</span>
+      {% else %}
+      {% with ''|center:event.evaluation as range %}
+      {% for _ in range %}
+      <span>★</span>
+      {% endfor %}
+      {% endwith %}
+      {% endif %}
+    </div>
+
+    <p id="id_date_at">{{ event.date_at }}</p>
   </ul>
   <div id="delete">
     <button id="confirmation-btn">削除</button>
   </div>
   {% include 'modal/delete-modal.html' %}
- <button><a href="{% url 'update' event.uuid %}">編集</a></button>
- <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
- {% endblock content %}
+  <button id="update"><a href="{% url 'update' event.uuid %}">編集</a></button>
+</div>
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+{% endblock content %}
