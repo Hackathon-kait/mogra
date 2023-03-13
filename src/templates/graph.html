@@ -1,15 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <title>test</title>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+{% block header %}
   <link rel="stylesheet" href="{% static 'css/graph.css' %}" />
-</head>
-
-<body>
+  {% endblock %}
+  {% block content %}
   {% include "header.html" %}
   <!-- グラフ描画エリア -->
   <div class="graph">
@@ -118,6 +112,5 @@
   </script>
 
 
-</body>
 
-</html>
+{% endblock content %}
