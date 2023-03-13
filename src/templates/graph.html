@@ -6,9 +6,7 @@
   {% block content %}
   {% include "header.html" %}
   <!-- グラフ描画エリア -->
-  <div class="graph">
-    <canvas id="canvas"></canvas>
-  </div>
+  <canvas id="canvas"></canvas>
   
 <script>
   var chartVal = []; // グラフデータ（描画するデータ）
@@ -88,7 +86,12 @@
           }
         }],
         // Y軸の最大値・最小値、目盛りの範囲などを設定する
-        y: {
+        yAxes: [{
+          gridLines:{
+            color:'black',
+            zeroLineColor:'black',
+            display:false
+          },
           suggestedMin: 0,
           suggestedMax: 10,
           ticks: {
