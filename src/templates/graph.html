@@ -73,23 +73,33 @@
       datasets: [{
         label: userName,
         data: chartVal,
-        borderColor: '',
+        borderColor:'#696969',
         pointBackgroundColor: '#47EAF4'
       }]
     },
     options: {
       scales: {
-        // Y軸の最大値・最小値、目盛りの範囲などを設定する
-        y: {
+        xAxes:[{
+          display:true,
+          stacked:false,
           gridLines:{
-            
+            color:'black',
+            display:false
+          }
+        }],
+        // Y軸の最大値・最小値、目盛りの範囲などを設定する
+        yAxes: [{
+          gridLines:{
+            color:'black',
+            zeroLineColor:'black',
+            display:false
           },
           suggestedMin: 0,
           suggestedMax: 10,
           ticks: {
             stepSize: 1,
-          }
-        }
+          },
+        }]
       },
       tooltips:{
         backgroundColor: "rgba(19, 56, 95, 0.9)",
