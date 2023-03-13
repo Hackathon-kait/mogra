@@ -1,21 +1,17 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>MOGRA</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-</head>
-<body>
-    {% include "header.html" %}
-    <h1>アカウント情報</h1>
-    <p>アカウント情報の確認、変更を行います。</p>
-    <p>氏名:{{user.username}}</p>
-    <a href="{% url 'nameup' %}">氏名変更</a>
-    <p>メールアドレス:{{user.email}}</p>
-    <a href="{% url 'emailup' %}">メールアドレス変更</a>
-    <p>パスワード:＊＊＊＊＊＊＊＊</p>
-    <a href="{% url 'passwordup' %}">パスワード変更</a>
-    
-</body>
-</html>
+{% block header %}
+
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+<h1>アカウント情報</h1>
+<p>アカウント情報の確認、変更を行います。</p>
+<p>氏名:{{user.username}}</p>
+<a href="{% url 'nameup' %}">氏名変更</a>
+<p>メールアドレス:{{user.email}}</p>
+<a href="{% url 'emailup' %}">メールアドレス変更</a>
+<p>パスワード:＊＊＊＊＊＊＊＊</p>
+<a href="{% url 'passwordup' %}">パスワード変更</a>
+
+{% endblock content %}
