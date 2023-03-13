@@ -17,4 +17,7 @@ canvas {
     width: 640px;
     margin:0 auto;
 }
->>>>>>> 7b732aa (change)
+body{
+    height: 100px;
+    text-align: center;
+}
