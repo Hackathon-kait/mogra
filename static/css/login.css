@@ -1,21 +1,25 @@
-.logo img{
-    position:relative;
+.logo img {
+    position: relative;
     height: 136px;
     left: 20px;
 }
-.logo{
+
+.logo {
     text-align: center;
 }
+
 .title {
     text-align: center;
     font-family: 'Yu Gothic UI';
     font-size: 26px;
     font-weight: lighter;
 }
+
 .formfontfix {
     font-family: 'Yu Gothic UI';
     font-size: 20px;
 }
+
 input {
     width: 90%;
     height: 40px;
@@ -24,31 +28,51 @@ input {
     padding-left: 16px;
     font-size: 26px;
 }
-a{
+
+a {
     color: #5c5c5c;
     position: absolute;
-    left: 530px; 
-    top:400px;
+    left: 530px;
+    top: 400px;
+    font-family: 'Yu Gothic UI';
+}
+a:hover {
+    color: #999999;
+    position: absolute;
+    left: 530px;
+    top: 400px;
     font-family: 'Yu Gothic UI';
 }
 
 
 
-label,input{
+label,
+input {
     display: block;
 }
-p{
-    padding:0% 10% 2% 15%;
+
+p {
+    padding: 0% 10% 2% 15%;
 }
 
 
 
 p:last-child input {
-  
+
     border: 0px solid rgba(0, 0, 0, 0.34);
-    text-decoration:underline solid #000000;
+    text-decoration: underline solid #000000;
     position: absolute;
     width: 120px;
     height: 41px;
-    left: 950px; 
-   }
+    left: 950px;
+}
+
+p:last-child input:hover {
+    border: 0px solid #999999;
+    text-decoration: underline solid #999999;
+    color: #999999;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+}
