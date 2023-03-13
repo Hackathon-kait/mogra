@@ -2,6 +2,7 @@
 <!doctype html>
 
 <html lang="ja">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
 <head>
     <meta charset="utf-8">
     <title>MOGRA</title>
@@ -11,8 +12,11 @@
     <form action="{% url 'nameup' %}" method="post">
     {% csrf_token %}
         {{ form.as_p }}
-        <p><input type="submit" value="変更"></p>
+        <div id="username">
+            <button id="confirmation-btn" type="button">変更</button>
+        </div>
+        {% include 'modal/username-modal.html' %}
     </form>
-
+    <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 </body>
 </html>

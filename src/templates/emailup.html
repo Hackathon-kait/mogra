@@ -3,6 +3,7 @@
 
 <html lang="ja">
 <head>
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
     <meta charset="utf-8">
     <title>MOGRA</title>
 </head>
@@ -11,8 +12,11 @@
     <form action="{% url 'emailup' %}" method="post">
     {% csrf_token %}
         {{ form.as_p }}
-        <p><input type="submit" value="変更"></p>
+        <div id="email">
+            <button id="confirmation-btn" type="button">変更</button>
+        </div>
+        {% include 'modal/email-modal.html' %}
     </form>
-
+    <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 </body>
 </html>

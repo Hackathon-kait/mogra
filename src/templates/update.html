@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>MOGRA</title>
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 <body>
@@ -53,13 +54,16 @@
           <label for="{{ form.date_at.id_for_label }}">{{ form.date_at.label }}</label>
           {{ form.date_at }}
         </div>
-        
-        <button type="submit">イベント編集</button>
+        <div id="update">
+          <button id="confirmation-btn" type="button">編集</button>
+        </div>
+        {% include 'modal/update-modal.html' %}
       </form>
       <script>
         function updateSliderValue(value) {
           document.getElementById("sliderValue").innerHTML = value;
         }
       </script>
+       <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 </body>
 </html>
