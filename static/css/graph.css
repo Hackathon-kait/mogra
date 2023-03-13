@@ -1,8 +1,8 @@
-.graph{
-    width: 90%;
-    height: 70%;
-}
 body{
-    height: 100px;
-    text-align: center;
+    margin:0;
+    padding:0;
+}
+.graph{
+    width: 640px;
+    margin:0 auto;
 }
