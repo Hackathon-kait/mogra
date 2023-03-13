@@ -1,22 +1,17 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-
-<html lang="ja">
-<head>
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
-    <meta charset="utf-8">
-    <title>MOGRA</title>
-</head>
-<body>
-  {% include "header.html" %}
-    <form action="{% url 'emailup' %}" method="post">
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+<form action="{% url 'emailup' %}" method="post">
     {% csrf_token %}
-        {{ form.as_p }}
-        <div id="email">
-            <button id="confirmation-btn" type="button">変更</button>
-        </div>
-        {% include 'modal/email-modal.html' %}
-    </form>
-    <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
-</body>
-</html>
+    {{ form.as_p }}
+    <div id="email">
+        <button id="confirmation-btn" type="button">変更</button>
+    </div>
+    {% include 'modal/email-modal.html' %}
+</form>
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+{% endblock content %}

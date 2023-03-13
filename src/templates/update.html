@@ -1,69 +1,64 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>MOGRA</title>
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-</head>
-<body>
-  {% include "header.html" %}
-    <h1>Edit event</h1>
-    <form method="POST" action=".">
-        {% csrf_token %}
-        
-        <div class="form-group">
-          <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
-          {{ form.title }}
-        </div>
-        
-        <div class="form-group">
-          <label for="{{ form.detail.id_for_label }}">{{ form.detail.label }}</label>
-          {{ form.detail }}
-        </div>
-        
-        <div class="form-group">
-          <label for="{{ form.evaluation.id_for_label }}">{{ form.evaluation.label }}</label>
-          <input type="range" name="{{ form.evaluation.name }}" id="{{ form.evaluation.id_for_label }}" class="form-control-range" 
-                min="0" max="10" value="{{ slider_value }}" onchange="updateSliderValue(this.value)" orient="vertical"
-                step="1" list="range-list">
-                <style type="text/css">
-                    input[type="range"] {
-                      -webkit-appearance:slider-vertical;
-                      writing-mode: bt-lr;
-                    }
-                </style>          
-                <datalist id="range-list">
-                    <option value="0">
-                    <option value="1">
-                    <option value="2">
-                    <option value="3">
-                    <option value="4">
-                    <option value="5">
-                    <option value="6">
-                    <option value="7">
-                    <option value="8">
-                    <option value="9">
-                    <option value="10">
-                </datalist>
-                <span id="sliderValue">{{ slider_value }}</span>
-        </div>
-        
-        <div class="form-group">
-          <label for="{{ form.date_at.id_for_label }}">{{ form.date_at.label }}</label>
-          {{ form.date_at }}
-        </div>
-        <div id="update">
-          <button id="confirmation-btn" type="button">編集</button>
-        </div>
-        {% include 'modal/update-modal.html' %}
-      </form>
-      <script>
-        function updateSliderValue(value) {
-          document.getElementById("sliderValue").innerHTML = value;
-        }
-      </script>
-       <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
-</body>
-</html>
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+<h1>Edit event</h1>
+<form method="POST" action=".">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+    {{ form.title }}
+  </div>
+
+  <div class="form-group">
+    <label for="{{ form.detail.id_for_label }}">{{ form.detail.label }}</label>
+    {{ form.detail }}
+  </div>
+
+  <div class="form-group">
+    <label for="{{ form.evaluation.id_for_label }}">{{ form.evaluation.label }}</label>
+    <input type="range" name="{{ form.evaluation.name }}" id="{{ form.evaluation.id_for_label }}"
+      class="form-control-range" min="0" max="10" value="{{ slider_value }}" onchange="updateSliderValue(this.value)"
+      orient="vertical" step="1" list="range-list">
+    <style type="text/css">
+      input[type="range"] {
+        -webkit-appearance: slider-vertical;
+        writing-mode: bt-lr;
+      }
+    </style>
+    <datalist id="range-list">
+      <option value="0">
+      <option value="1">
+      <option value="2">
+      <option value="3">
+      <option value="4">
+      <option value="5">
+      <option value="6">
+      <option value="7">
+      <option value="8">
+      <option value="9">
+      <option value="10">
+    </datalist>
+    <span id="sliderValue">{{ slider_value }}</span>
+  </div>
+
+  <div class="form-group">
+    <label for="{{ form.date_at.id_for_label }}">{{ form.date_at.label }}</label>
+    {{ form.date_at }}
+  </div>
+  <div id="update">
+    <button id="confirmation-btn" type="button">編集</button>
+  </div>
+  {% include 'modal/update-modal.html' %}
+</form>
+<script>
+  function updateSliderValue(value) {
+    document.getElementById("sliderValue").innerHTML = value;
+  }
+</script>
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+{% endblock content %}
