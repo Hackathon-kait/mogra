@@ -30,6 +30,14 @@ label,input{
 p{
     padding:0% 10% 2% 15%;
 }
+a{
+    color: #5c5c5c;
+    position: absolute;
+    left: 530px; 
+    top:560px;
+    font-family: 'Yu Gothic UI';
+}
+
 p:nth-child(6) input {
    border: 0px solid rgba(0, 0, 0, 0.34);
    text-decoration:underline solid #000000;
