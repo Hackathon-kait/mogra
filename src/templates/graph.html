@@ -73,7 +73,7 @@
       datasets: [{
         label: userName,
         data: chartVal,
-        borderColor: '#0000000',
+        borderColor: '',
         pointBackgroundColor: '#47EAF4'
       }]
     },
@@ -81,6 +81,9 @@
       scales: {
         // Y軸の最大値・最小値、目盛りの範囲などを設定する
         y: {
+          gridLines:{
+            
+          },
           suggestedMin: 0,
           suggestedMax: 10,
           ticks: {
@@ -108,8 +111,7 @@
     let lineChart = new Chart(lineCtx, lineConfig);
 }
 
-
-  </script>
+</script>
 
 
 
