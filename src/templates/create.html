@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
-
+<link rel="stylesheet" href="{% static 'css/create.css' %}" />
 {% endblock %}
 {% block content %}
   {% include "header.html" %}
-    <h1>イベント作成</h1>
+  <div id="content">
+    <h1 id="title">Add event</h1>
+    <div id="titleline"></div>
+    <h2 id="subtitle">イベントを作成します。</h2>
+    <div id="vertical_line"></div>
+    <h3 id="event_name">イベント名</h3>
+    <h3 id="event_detail">詳細</h3>
+    <h3 id="event_date">日時</h3>
+    <p id="degree">モチベーション度</p>
+    <div id="btnline"></div>
     <form method="POST" action=".">
         {% csrf_token %}
         
@@ -50,9 +59,11 @@
           <label for="{{ form.date_at.id_for_label }}">{{ form.date_at.label }}</label>
           {{ form.date_at }}
         </div>
-        
-        <button type="submit">イベント作成</button>
+        <div id="create">
+        <button type="submit">作成</button>
+        </div>
       </form>
+  </div>
       <script>
         function updateSliderValue(value) {
           document.getElementById("sliderValue").innerHTML = value;

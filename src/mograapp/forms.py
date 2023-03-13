@@ -31,10 +31,10 @@ class EventsModelForm(forms.ModelForm):
         fields = ['title', 'detail', 'evaluation','date_at']
         
         labels = {
-            'title': 'タイトル',
-            'detail': '詳細',
-            'evaluation': '評価',
-            'date_at': '日時',
+            'title': '',
+            'detail': '',
+            'evaluation': '',
+            'date_at': '',
         }
         widgets = {
                 'date_at': DateInput(attrs={'type': 'date'}),
