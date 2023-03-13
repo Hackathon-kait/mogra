@@ -2,6 +2,7 @@ body{
     margin:0;
     padding:0;
 }
+<<<<<<< HEAD
 canvas {
     display: block;
     position: absolute;
@@ -11,3 +12,9 @@ canvas {
     left: 0;
     margin: auto;
   }
+=======
+.graph{
+    width: 640px;
+    margin:0 auto;
+}
+>>>>>>> 7b732aa (change)
