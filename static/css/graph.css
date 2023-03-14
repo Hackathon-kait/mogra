@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin:0;
     padding:0;
@@ -17,7 +18,18 @@ canvas {
     width: 640px;
     margin:0 auto;
 }
+=======
+>>>>>>> c6b235e15bd2affab1e2804a2bfaf2393ac60759
 body{
-    height: 100px;
-    text-align: center;
+    margin:0;
+    padding:0;
 }
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
