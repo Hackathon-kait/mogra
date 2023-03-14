@@ -2,9 +2,19 @@
 {% load static %}
 {% block header %}
 <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+<link rel="stylesheet" href="{% static 'css/email.css' %}" />
 {% endblock %}
 {% block content %}
 {% include "header.html" %}
+<div id="content">
+    <h1 id="title">アカウント情報</h1>
+    <div id="titleline"></div>
+    <h2 id="subtitle">メールアドレスを変更します。</h2>
+    <div id="vertical_line"></div>
+    <h3 id="now_event_email">現在のメールアドレス</h3>
+    <h3 id="new_event_email">新しいメールアドレス</h3>
+    <h3 id="event_password">パスワード</h3>
+    <div id="btnline"></div>
 <form action="{% url 'emailup' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -13,5 +23,6 @@
     </div>
     {% include 'modal/email-modal.html' %}
 </form>
+</div>
 <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 {% endblock content %}
