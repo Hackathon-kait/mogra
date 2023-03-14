@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,PasswordResetForm
 from .models import EventsModel
 from django.forms.widgets import DateInput
 from django.core.exceptions import ValidationError
@@ -44,6 +44,12 @@ class EventsModelForm(forms.ModelForm):
         if value >= 11:
             raise forms.ValidationError('10以下の値を入力してください。')
         return value
+    
+    def clean_date_at(self):
+        date_at = self.cleaned_data['date_at']
+        if not date_at:
+            raise forms.ValidationError('日付を入力してください。')
+        return date_at
 
 class ChangePasswordForm(forms.Form):
     current_password = forms.CharField(label="現在のパスワード", widget=forms.PasswordInput())
@@ -132,3 +138,5 @@ class ChangeEmailForm(forms.Form):
         user.email = self.cleaned_data['new_email']
         user.save()
 
+class CustomPasswordResetForm(PasswordResetForm):
+    email=forms.EmailField(label="メールアドレス",max_length=254,widget=forms.EmailInput(attrs={'autocomplete': 'email', 'class': 'form-control'}))
