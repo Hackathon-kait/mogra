@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm,ChangeUsernameForm,ChangeEmailForm
+from .forms import SignupForm, LoginForm,EventsModelForm,ChangePasswordForm,ChangeUsernameForm,ChangeEmailForm,CustomPasswordResetForm
 from django.contrib.auth import login,authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
@@ -12,6 +12,10 @@ from django.http.response import HttpResponse
 from django.views import View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.views import (
+    PasswordResetView, PasswordResetDoneView, 
+    PasswordResetConfirmView, PasswordResetCompleteView
+)
 # Create your views here.
 
 class MograView(TemplateView):
@@ -162,3 +166,34 @@ class ChangeEmailView(LoginRequiredMixin, View):
             messages.success(request, 'メールアドレスを変更しました。')
             return redirect('/home/')
         return render(request, self.template_name, {'form': form})
+
+class CustomPasswordResetView(PasswordResetView):
+    form_class=CustomPasswordResetForm
+    template_name = 'password_reset_form.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_url = reverse_lazy('password_reset_done')
+
+    def form_valid(self, form):
+        """
+        フォームがバリデーションを通過した場合に呼び出される
+        """
+        # 入力されたメールアドレスを取得
+        email = form.cleaned_data['email']
+        # メールアドレスが登録されているかチェック
+        if not User.objects.filter(email__iexact=email, is_active=True).exists():
+            # 登録されていない場合はエラーメッセージを表示
+            form.add_error('email', 'このメールアドレスは登録されていません。')
+            return self.form_invalid(form)
+        # パスワードリセットのロジックを実装する
+        return super().form_valid(form)
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'password_reset_done.html'
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'password_reset_confirm.html'
+    success_url = reverse_lazy('password_reset_complete')
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'password_reset_complete.html'
