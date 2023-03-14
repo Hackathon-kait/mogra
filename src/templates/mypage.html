@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
-
+<link rel="stylesheet" href="{% static 'css/mypage.css' %}" />
 {% endblock %}
 {% block content %}
 {% include "header.html" %}
-<h1>アカウント情報</h1>
-<p>アカウント情報の確認、変更を行います。</p>
-<p>氏名:{{user.username}}</p>
-<a href="{% url 'nameup' %}">氏名変更</a>
-<p>メールアドレス:{{user.email}}</p>
-<a href="{% url 'emailup' %}">メールアドレス変更</a>
-<p>パスワード:＊＊＊＊＊＊＊＊</p>
-<a href="{% url 'passwordup' %}">パスワード変更</a>
+<div id="content">
+  <h1 id="title">My page</h1>
+  <div id="titleline"></div>
+  <h2 id="subtitle">アカウント情報の確認、変更を行います。</h2>
+  <div id="vertical_line"></div>
+  <h3 id="event_username">ユーザー名</h3>
+  <h3 id="event_email">メールアドレス</h3>
+  <h3 id="event_password">パスワード</h3>
+  <div id="btnline1"></div>
+  <div id="btnline2"></div>
+  <div id="btnline3"></div>
 
+<p id="id_username">{{user.username}}</p>
+<a id="id_username_btn"href="{% url 'nameup' %}">変更</a>
+<p id="id_email">{{user.email}}</p>
+<a id="id_email_btn"href="{% url 'emailup' %}">変更</a>
+<p id="id_password">＊＊＊＊＊＊＊＊</p>
+<a id="id_password_btn"href="{% url 'passwordup' %}">変更</a>
+</div>
 {% endblock content %}
