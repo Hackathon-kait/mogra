@@ -29,18 +29,33 @@ input {
     font-size: 26px;
 }
 
-a {
+.link1{
     color: #5c5c5c;
     position: absolute;
     left: 530px;
-    top: 400px;
+    top: 420px;
     font-family: 'Yu Gothic UI';
 }
-a:hover {
+.link1:hover {
     color: #999999;
     position: absolute;
     left: 530px;
-    top: 400px;
+    top: 420px;
+    font-family: 'Yu Gothic UI';
+}
+
+.link2{
+    color: #5c5c5c;
+    position: absolute;
+    left: 548px;
+    top: 390px;
+    font-family: 'Yu Gothic UI';
+}
+.link2:hover {
+    color: #999999;
+    position: absolute;
+    left: 548px;
+    top: 390px;
     font-family: 'Yu Gothic UI';
 }
 
