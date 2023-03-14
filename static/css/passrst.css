@@ -1,0 +1,59 @@
+.logo img {
+    position: relative;
+    height: 136px;
+    left: 20px;
+}
+.logo {
+    text-align: center;
+}
+.headline{
+    font-family: 'Yu Gothic UI';
+    font-size: 26px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    height: 40px;
+    border-radius: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    padding-left: 30px;
+    font-size: 26px;
+}
+.formfontfix {
+    font-family: 'Yu Gothic UI';
+    font-size: 20px;
+}
+button {
+
+    border: 0px solid rgba(0, 0, 0, 0.34);
+    text-decoration: underline solid #000000;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+    
+}
+button:hover {
+    border: 0px solid #999999;
+    text-decoration: underline solid #999999;
+    color: #999999;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+}
+
+label,
+input {
+    display: block;
+}
+
+/* label{
+    font-size:0px;
+} */
+
+p {
+    padding: 0% 10% 2% 15%;
+}
