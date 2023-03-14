@@ -1,0 +1,303 @@
+#content {
+  position: absolute;
+  margin: auto;
+}
+
+#title {
+  position: absolute;
+  width: 376px;
+  height: 77px;
+  left: -30px;
+  top: 50px;
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 54px;
+  text-align: center;
+  color: #383838;
+}
+
+#subtitle {
+  position: absolute;
+  width: 477px;
+  height: 46px;
+  left: 104px;
+  top: 112px;
+
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #383838;
+}
+
+#titleline {
+  position: absolute;
+  width: 240px;
+  height: 0px;
+  left: 40px;
+  top: 102px;
+  border: 2px solid #92F5FC;
+}
+
+#vertical_line {
+  position: absolute;
+  width: 320px;
+  height: 0px;
+  left: 85px;
+  top: 350px;
+
+  border: 1px solid #000000;
+  transform: rotate(-90deg);
+}
+
+#id_username {
+  box-sizing: border-box;
+  position: absolute;
+  width: 600px;
+  height: 45px;
+  left: 305px;
+  top: 202px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 0px 0px 0px 20px;
+  color: #393939;
+  font-weight: bold;
+}
+
+#id_email {
+  box-sizing: border-box;
+  position: absolute;
+  width: 600px;
+  height: 45px;
+  left: 305px;
+  top: 266px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #393939;
+}
+
+#id_password {
+  box-sizing: border-box;
+  position: absolute;
+  width: 600px;
+  height: 45px;
+  left: 305px;
+  top: 352px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #393939;
+}
+
+#degree {
+  position: absolute;
+  width: 192px;
+  height: 300px;
+  left: 1000px;
+  top: 114px;
+}
+
+.form-control-range {
+  position: absolute;
+  width: 192px;
+  height: 300px;
+  left: 965px;
+  top: 140px;
+}
+
+
+#event_username {
+  position: absolute;
+  width: 120px;
+  height: 27px;
+  left: 90px;
+  top: 205px;
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+  /* ボックスの高さと同一 */
+  color: #000000;
+  text-align: center;
+}
+
+#event_email {
+  position: absolute;
+  width: 120px;
+  height: 27px;
+  left: 90px;
+  top: 290px;
+  font-weight: bold;
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+  /* ボックスの高さと同一 */
+  color: #000000;
+  text-align: center;
+}
+
+#event_password {
+  position: absolute;
+  width: 120px;
+  height: 27px;
+  left: 90px;
+  top: 375px;
+  font-weight: bold;
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+  /* ボックスの高さと同一 */
+  color: #000000;
+  text-align: center;
+}
+
+
+
+#confirmation-btn {
+
+  position: absolute;
+  width: 133px;
+  height: 27px;
+  left: 1000px;
+  top: 500px;
+
+  font-family: 'Nobile';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  color: #000000;
+}
+
+#btnline1 {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  left: 1016px;
+  top: 232px;
+  border: 1px solid #000000;
+}
+
+#btnline2 {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  left: 1016px;
+  top: 316px;
+  border: 1px solid #000000;
+}
+
+#btnline3 {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  left: 1016px;
+  top: 402px;
+  border: 1px solid #000000;
+}
+
+#id_username_btn {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 202px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 0px 0px 0px 20px;
+  color: #393939;
+  font-weight: bold;
+}
+
+#id_email_btn {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 266px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #393939;
+}
+
+#id_password_btn {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 352px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #393939;
+}
+
+#id_username_btn:hover {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 202px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 0px 0px 0px 20px;
+  color: #999999;
+  font-weight: bold;
+}
+
+#id_email_btn:hover {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 266px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #999999;
+}
+
+#id_password_btn:hover {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 1000px;
+  top: 352px;
+  font-weight: 400;
+  background: #FFFFFF;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  color: #999999;
+}
