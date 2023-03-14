@@ -6,9 +6,7 @@
   {% block content %}
   {% include "header.html" %}
   <!-- グラフ描画エリア -->
-  <div class="graph">
-    <canvas id="canvas"></canvas>
-  </div>
+  <canvas id="canvas" width="150%" height="75%"></canvas>
   
 <script>
   var chartVal = []; // グラフデータ（描画するデータ）
@@ -73,20 +71,33 @@
       datasets: [{
         label: userName,
         data: chartVal,
-        borderColor: '#0000000',
+        borderColor:'#696969',
         pointBackgroundColor: '#47EAF4'
       }]
     },
     options: {
       scales: {
+        xAxes:[{
+          display:true,
+          stacked:false,
+          gridLines:{
+            color:'black',
+            display:false
+          }
+        }],
         // Y軸の最大値・最小値、目盛りの範囲などを設定する
-        y: {
+        yAxes: [{
+          gridLines:{
+            color:'black',
+            zeroLineColor:'black',
+            display:false
+          },
           suggestedMin: 0,
           suggestedMax: 10,
           ticks: {
             stepSize: 1,
-          }
-        }
+          },
+        }]
       },
       tooltips:{
         backgroundColor: "rgba(19, 56, 95, 0.9)",
@@ -108,8 +119,7 @@
     let lineChart = new Chart(lineCtx, lineConfig);
 }
 
-
-  </script>
+</script>
 
 
 
