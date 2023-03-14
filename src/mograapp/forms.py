@@ -77,8 +77,8 @@ class ChangePasswordForm(forms.Form):
 
 
 class ChangeUsernameForm(forms.Form):
-    new_username = forms.CharField(label="新しいアカウント名")
-    password = forms.CharField(label="現在のパスワード", widget=forms.PasswordInput())
+    new_username = forms.CharField(label="")
+    password = forms.CharField(label="", widget=forms.PasswordInput())
 
     def __init__(self, user_id, *args, **kwargs):
         self.user_id = user_id
@@ -104,9 +104,9 @@ class ChangeUsernameForm(forms.Form):
         
 
 class ChangeEmailForm(forms.Form):
-    current_email = forms.EmailField(label='現在のメールアドレス')
-    new_email = forms.EmailField(label='新しいメールアドレス')
-    password = forms.CharField(label='パスワード', widget=forms.PasswordInput())
+    current_email = forms.EmailField(label='')
+    new_email = forms.EmailField(label='')
+    password = forms.CharField(label='', widget=forms.PasswordInput())
 
     def __init__(self, user_id, *args, **kwargs):
         self.user_id = user_id
