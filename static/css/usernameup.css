@@ -198,3 +198,10 @@
   text-align: center;
   color: #999999;
 }
+
+.errorlist{
+  position: relative;
+  top:84px;
+  left:460px;
+  color: #FA3E3E;
+}

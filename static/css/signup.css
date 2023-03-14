@@ -20,6 +20,11 @@
     font-size: 20px;
 }
 
+ul{
+    text-align: center;
+  color: #FA3E3E;
+}
+
 input {
     width: 90%;
     height: 40px;
@@ -54,7 +59,7 @@ a:hover
     font-family: 'Yu Gothic UI';
 }
 
-p:nth-child(6) input {
+p:last-child input {
     border: 0px solid rgba(0, 0, 0, 0.34);
     text-decoration: underline solid #000000;
     position: absolute;
@@ -64,7 +69,7 @@ p:nth-child(6) input {
 }
 
 /* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */
-p:nth-child(6) input:hover{
+p:last-child input:hover{
     border: 0px solid #999999;
     text-decoration: underline solid #999999;
     color: #999999;
