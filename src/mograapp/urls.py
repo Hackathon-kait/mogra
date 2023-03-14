@@ -7,7 +7,7 @@ urlpatterns = [
     path('',views.MograView.as_view(), name='mogra'),
     path('signup/', views.MySignupView.as_view(), name='signup'),
     path('login/', views.MyLoginView.as_view(), name='login'),
-    path('logout/', views.MyLogoutView.as_view(), name='logout'),
+    path('logout/', views.MyLogoutView.as_view(next_page='/login/'), name='logout'),
     path('mypage/', views.MyUserView.as_view(), name='mypage'),
     path('event/<uuid:uuid>/', views.EventDetailView.as_view(), name='event_detail'),
     path('create/',views.MyEventCreateView.as_view(),name='create'),
