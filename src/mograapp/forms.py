@@ -26,6 +26,10 @@ class LoginForm(AuthenticationForm):
     pass
 
 class EventsModelForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['date_at'].required = True
+    
     class Meta:
         model = EventsModel
         fields = ['title', 'detail', 'evaluation','date_at']
@@ -39,17 +43,6 @@ class EventsModelForm(forms.ModelForm):
         widgets = {
                 'date_at': DateInput(attrs={'type': 'date'}),
         }
-    def clean_evaluation(self):
-        value = self.cleaned_data['evaluation']
-        if value >= 11:
-            raise forms.ValidationError('10以下の値を入力してください。')
-        return value
-    
-    def clean_date_at(self):
-        date_at = self.cleaned_data['date_at']
-        if not date_at:
-            raise forms.ValidationError('日付を入力してください。')
-        return date_at
 
 class ChangePasswordForm(forms.Form):
     current_password = forms.CharField(label="現在のパスワード", widget=forms.PasswordInput())
