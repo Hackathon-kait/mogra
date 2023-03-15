@@ -1,0 +1,32 @@
+.logo img {
+    position: relative;
+    height: 136px;
+    left: 20px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Yu Gothic UI';
+    font-size: 26px;
+    font-weight: lighter;
+}
+a {
+    color: #5c5c5c;
+
+
+    font-family: 'Yu Gothic UI';
+}
+a:hover
+{
+    color: #999999;
+
+    font-family: 'Yu Gothic UI';
+}
+
+.link{
+    text-align: center;
+}
