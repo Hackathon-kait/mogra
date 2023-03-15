@@ -20,11 +20,6 @@
     font-size: 20px;
 }
 
-ul{
-    text-align: center;
-  color: #FA3E3E;
-}
-
 input {
     width: 90%;
     height: 40px;
@@ -34,8 +29,45 @@ input {
     font-size: 26px;
 }
 
+.link1{
+    color: #5c5c5c;
+    position: absolute;
+    left: 530px;
+    top: 420px;
+    font-family: 'Yu Gothic UI';
+}
+.link1:hover {
+    color: #999999;
+    position: absolute;
+    left: 530px;
+    top: 420px;
+    font-family: 'Yu Gothic UI';
+}
+
+.link2{
+    color: #5c5c5c;
+    position: absolute;
+    left: 548px;
+    top: 390px;
+    font-family: 'Yu Gothic UI';
+}
+.link2:hover {
+    color: #999999;
+    position: absolute;
+    left: 548px;
+    top: 390px;
+    font-family: 'Yu Gothic UI';
+}
+ul{
+    
+    text-align: center;
+  color: #FA3E3E;
+}
+
+
+
 label,
-input {
+button {
     display: block;
 }
 
@@ -43,39 +75,24 @@ p {
     padding: 0% 10% 2% 15%;
 }
 
-a {
-    color: #5c5c5c;
-  
 
-    font-family: 'Yu Gothic UI';
-}
-a:hover
-{
-    color: #999999;
 
-    font-family: 'Yu Gothic UI';
-}
+button {
 
-.link{
-    text-align: center;
-}
-
-p:last-child input {
     border: 0px solid rgba(0, 0, 0, 0.34);
     text-decoration: underline solid #000000;
     position: absolute;
-    width: 72px;
+    width: 120px;
     height: 41px;
     left: 950px;
 }
 
-/* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */
-p:last-child input:hover{
+button:hover {
     border: 0px solid #999999;
     text-decoration: underline solid #999999;
     color: #999999;
     position: absolute;
-    width: 72px;
+    width: 120px;
     height: 41px;
     left: 950px;
 }
