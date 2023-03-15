@@ -10,7 +10,7 @@ class EventsModel(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
-    detail = models.TextField(null=True, blank=True)
+    detail = models.TextField(max_length=180,null=True, blank=True)
     evaluation = models.PositiveSmallIntegerField(default=0)
     date_at = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
