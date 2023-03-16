@@ -96,3 +96,11 @@ button:hover {
     height: 41px;
     left: 950px;
 }
+
+ul{
+    font-size: 0px;
+}
+
+.errorlist{
+    font-size: 20px;
+}
