@@ -1,27 +1,24 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
+{% block header %}
+<link rel="stylesheet" href="{% static '/css/signup.css' %}">
 
-<html lang="ja">
-<head>
-    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
-    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
-    <meta charset="utf-8">
-    <title>MOGRA</title>
-</head>
-<body>
-    <div class ="logo">
-        <img src="{% static '/img/logo.svg' %}" class ="logo">
-    </div>
-    <div class ="title">
-        <h1>アカウント登録　</h1>
-    </div>
-    <div class ="formfontfix">
-        <form action="{% url 'signup' %}" method="post" class = "formfix">
+{% endblock %}
+{% block content %}
+<div class="logo">
+    <img src="{% static '/img/logo.svg' %}" class="logo">
+</div>
+<div class="title">
+    <h1>アカウント登録　</h1>
+</div>
+<div class="formfontfix">
+    <form action="{% url 'signup' %}" method="post" class="formfix">
         {% csrf_token %}
-            {{ form.as_p }}
-            <p><input type="submit" value="登録"></p>
-        </form>
-    </div>
-
-</body>
-</html>
+        {{ form.as_p }}
+        <p><input type="submit" value="登録"></p>
+    </form>
+</div>
+<div class ="link" >
+<a id="headerlink" href="{% url 'login'%}">既にアカウントをお持ちの方はこちら</a>
+</div>
+{% endblock content %}

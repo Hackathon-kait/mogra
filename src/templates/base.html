@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <title>MOGRA</title>
+
+    <!-- これのCSSがgraphページで聞いておりヘッダーをそろえるため前ページに設置します -->
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <!-- Copyright (c) 2014-2022 Chart.js Contributors
+    GitHub page:https://github.com/chartjs/Chart.js/blob/master/LICENSE.md -->
+    
+    {% block header %}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block content %} {% endblock content %}
+  </body>
+</html>

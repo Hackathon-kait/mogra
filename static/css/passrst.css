@@ -3,26 +3,14 @@
     height: 136px;
     left: 20px;
 }
-
 .logo {
     text-align: center;
 }
-
-.title {
-    text-align: center;
+.headline{
     font-family: 'Yu Gothic UI';
     font-size: 26px;
     font-weight: lighter;
-}
-
-.formfontfix {
-    font-family: 'Yu Gothic UI';
-    font-size: 20px;
-}
-
-ul{
     text-align: center;
-  color: #FA3E3E;
 }
 
 input {
@@ -30,8 +18,31 @@ input {
     height: 40px;
     border-radius: 26px;
     border: 1px solid rgba(0, 0, 0, 0.34);
-    padding-left: 16px;
+    padding-left: 30px;
     font-size: 26px;
+}
+.formfontfix {
+    font-family: 'Yu Gothic UI';
+    font-size: 20px;
+}
+button {
+
+    border: 0px solid rgba(0, 0, 0, 0.34);
+    text-decoration: underline solid #000000;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+    
+}
+button:hover {
+    border: 0px solid #999999;
+    text-decoration: underline solid #999999;
+    color: #999999;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
 }
 
 label,
@@ -39,43 +50,14 @@ input {
     display: block;
 }
 
+/* label{
+    font-size:0px;
+} */
+
 p {
     padding: 0% 10% 2% 15%;
 }
-
-a {
-    color: #5c5c5c;
-  
-
-    font-family: 'Yu Gothic UI';
-}
-a:hover
-{
-    color: #999999;
-
-    font-family: 'Yu Gothic UI';
-}
-
-.link{
+ul{
     text-align: center;
-}
-
-p:last-child input {
-    border: 0px solid rgba(0, 0, 0, 0.34);
-    text-decoration: underline solid #000000;
-    position: absolute;
-    width: 72px;
-    height: 41px;
-    left: 950px;
-}
-
-/* フォームの文字変更は”forms.py”のSignupFormのlabelを変更する */
-p:last-child input:hover{
-    border: 0px solid #999999;
-    text-decoration: underline solid #999999;
-    color: #999999;
-    position: absolute;
-    width: 72px;
-    height: 41px;
-    left: 950px;
+  color: #FA3E3E;
 }

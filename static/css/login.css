@@ -1,21 +1,25 @@
-.logo img{
-    position:relative;
+.logo img {
+    position: relative;
     height: 136px;
     left: 20px;
 }
-.logo{
+
+.logo {
     text-align: center;
 }
+
 .title {
     text-align: center;
     font-family: 'Yu Gothic UI';
     font-size: 26px;
     font-weight: lighter;
 }
+
 .formfontfix {
     font-family: 'Yu Gothic UI';
     font-size: 20px;
 }
+
 input {
     width: 90%;
     height: 40px;
@@ -24,18 +28,70 @@ input {
     padding-left: 16px;
     font-size: 26px;
 }
-label,input{
+
+.link1{
+    color: #5c5c5c;
+    position: absolute;
+    left: 530px;
+    top: 420px;
+    font-family: 'Yu Gothic UI';
+}
+.link1:hover {
+    color: #999999;
+    position: absolute;
+    left: 530px;
+    top: 420px;
+    font-family: 'Yu Gothic UI';
+}
+
+.link2{
+    color: #5c5c5c;
+    position: absolute;
+    left: 548px;
+    top: 390px;
+    font-family: 'Yu Gothic UI';
+}
+.link2:hover {
+    color: #999999;
+    position: absolute;
+    left: 548px;
+    top: 390px;
+    font-family: 'Yu Gothic UI';
+}
+ul{
+    text-align: center;
+  color: #FA3E3E;
+}
+
+
+
+label,
+input {
     display: block;
 }
-p{
-    padding:0% 10% 2% 15%;
+
+p {
+    padding: 0% 10% 2% 15%;
 }
-p:nth-child(4) input {
-  
-   border: 0px solid rgba(0, 0, 0, 0.34);
-   text-decoration:underline solid #000000;
-   position: absolute;
-   width: 120px;
-   height: 41px;
-   left: 980px; 
-  }
+
+
+
+p:last-child input {
+
+    border: 0px solid rgba(0, 0, 0, 0.34);
+    text-decoration: underline solid #000000;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+}
+
+p:last-child input:hover {
+    border: 0px solid #999999;
+    text-decoration: underline solid #999999;
+    color: #999999;
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    left: 950px;
+}

@@ -6,9 +6,9 @@
   </div>
   <div class="list-menu">
     <ul class="list">
-      <li><img src="{% static 'img/addeventbtn.png' %}"><a id="headerlink" href="{% url 'create'%}">Add event</a>
-      <li><img src="{% static 'img/mypagebtn.png' %}"><a id="headerlink">My page</a>
-      <li><img src="{% static 'img/logoutbtn.png' %}"><a id="headerlink" href="{% url 'logout'%}">Log out</a>
+      <li><a  href="{% url 'create'%}"><img id="linkimg" src="{% static 'img/addeventbtn.png' %}"><span id="headerlink">Add event</p></spam>
+      <li><a  href="{% url 'mypage'%}"><img id="linkimg" src="{% static 'img/mypagebtn.png' %}"><span id="headerlink">My page</span></a>
+      <li><a  href="{% url 'logout'%}"><img id="linkimg" src="{% static 'img/logoutbtn.png' %}"><span id="headerlink">Log out</span></a>
     </ul>
   </div>
   <hr>
