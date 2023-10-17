@@ -69,11 +69,11 @@
 - グラフ作成-イベント追加
     - 画面上部"Add event"をクリック
     - イベント名、詳細、日時を入力。イベント評価度はスライダーにて入力
-    [!['demo1'](images/logo.png)]('https://youtu.be/WIN6fvjxvBQ')
+    ![MOGRA demo1](images/demo1.gif)
 - グラフ作成-イベント編集・削除
     - 編集するイベントをクリック
     - 編集項目入力後”編集”をクリック。削除の場合は"削除"をクリック
-    [!['demo1'](images/logo.png)]('https://youtu.be/PGfvhzaKD4s')
+    ![MOGRA demo2](images/demo2.gif)
 
    
 
