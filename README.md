@@ -10,7 +10,6 @@
 
 # サイトURL <!-- URLは用意してください -->
 
-[MOGRA]()
 <a href="https://github.com/Hackathon-kait/mogra" target="_blank" rel="noopener noreferrer">MOGRA</a>
 
 
