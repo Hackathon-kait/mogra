@@ -10,7 +10,9 @@
 
 # サイトURL <!-- URLは用意してください -->
 
-[MOGRA](URL)
+[MOGRA]()
+<a href="https://github.com/Hackathon-kait/mogra" target="_blank" rel="noopener noreferrer">MOGRA</a>
+
 
 # テスト用アカウント <!--用意するのであれば作っておいてください -->
 
@@ -50,9 +52,9 @@
 
 # 開発期間
 
-約３週間 
+約2週間 
 <br>
-週２回 進捗確認ミーティング
+毎日コアタイムを設定し開発に取り組んだ
 <br>
 
 # 動作方法
