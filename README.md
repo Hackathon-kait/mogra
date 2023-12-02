@@ -10,15 +10,15 @@
 
 # サイトURL <!-- URLは用意してください -->
 
-<a href="https://github.com/Hackathon-kait/mogra" target="_blank" rel="noopener noreferrer">MOGRA</a>
+<a href="https://mogra.ngrok.app/" target="_blank" rel="noopener noreferrer">MOGRA</a>
 
 
 # テスト用アカウント <!--用意するのであれば作っておいてください -->
 
-- Login user ID
-    - kakerunohimitsu@gmail.com
+- ユーザー名
+    - sample
 - password
-    - 25251111
+    - efULx/vMyEWU4
 
 # 開発環境 <!--　必要であればver等追記してください -->
 - Python
