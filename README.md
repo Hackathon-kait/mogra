@@ -9,7 +9,7 @@
 
 
 # サイトURL <!-- URLは用意してください -->
-現在停止中
+
 <a href="https://mogra.ngrok.app/" target="_blank" rel="noopener noreferrer">MOGRA</a>
 
 
