@@ -1,4 +1,4 @@
-# *ポートフォリオ用　自己分析支援ツール"MOGRA"* 
+# *自己分析支援ツール"MOGRA"* 
 
 
 ![MOGRA title](images/logo.png)
