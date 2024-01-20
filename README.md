@@ -21,14 +21,14 @@
     - efULx/vMyEWU4
 
 ## 主な使用技術 <!--　必要であればver等追記してください --> 
-> ## フロントエンド [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)　Chart.js
+> ## フロントエンド　[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)　Chart.js
 > ## バックエンド　[![My Skills](https://skillicons.dev/icons?i=django)](https://skillicons.dev)
 > ## データベース　[![My Skills](https://skillicons.dev/icons?i=mysql)](https://skillicons.dev)
 > ## その他　[![My Skills](https://skillicons.dev/icons?i=nginx,docker,)](https://skillicons.dev)
 
 ## 開発ツール
-> ## [![My Skills](https://skillicons.dev/icons?i=figma,git,github)](https://skillicons.dev)
-> ## [![My Skills](https://skillicons.dev/icons?i=vscode,discord)](https://skillicons.dev)　Miro
+> ##　[![My Skills](https://skillicons.dev/icons?i=figma,git,github)](https://skillicons.dev)
+> ##　[![My Skills](https://skillicons.dev/icons?i=vscode,discord)](https://skillicons.dev)　Miro
 
 ## 機能一覧
 
