@@ -27,8 +27,8 @@
 > ## その他　[![My Skills](https://skillicons.dev/icons?i=nginx,docker,)](https://skillicons.dev)
 
 ## 開発ツール
-> ##　[![My Skills](https://skillicons.dev/icons?i=figma,git,github)](https://skillicons.dev)
-> ##　[![My Skills](https://skillicons.dev/icons?i=vscode,discord)](https://skillicons.dev)　Miro
+> ## [![My Skills](https://skillicons.dev/icons?i=figma,git,github)](https://skillicons.dev)
+> ## [![My Skills](https://skillicons.dev/icons?i=vscode,discord)](https://skillicons.dev)　Miro
 
 ## 機能一覧
 
