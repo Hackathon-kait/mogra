@@ -21,7 +21,7 @@
     - efULx/vMyEWU4
 
 ## 主な使用技術 <!--　必要であればver等追記してください --> 
-> ## フロントエンド [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)Chart.js
+> ## フロントエンド [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev) Chart.js
 > ## バックエンド　[![My Skills](https://skillicons.dev/icons?i=django)](https://skillicons.dev)
 > ## データベース　[![My Skills](https://skillicons.dev/icons?i=mysql)](https://skillicons.dev)
 > ## その他　[![My Skills](https://skillicons.dev/icons?i=nginx,docker,)](https://skillicons.dev)
